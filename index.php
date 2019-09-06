@@ -16,8 +16,9 @@
         <ul>
         <?php
             include ('get_zapis.php');
-            foreach($res as $zapis){
-                echo "<li>".$zapis["id"]."  ".$zapis["title"]."  ".$zapis["values"][2][0][title]."  ".$zapis["values"][3][0]."  ".$zapis["values"][4]."  ".$zapis["values"][7]."</li>";
+            foreach($res as $zapis_full){
+                $zapis = $zapis_full["values"];
+                echo "<li>".$zapis[2][0][title]."  ".$zapis[3][0]."  ".$zapis[4]."  ".$zapis[7]."</li>";
             }
         ?>
         </ul>
