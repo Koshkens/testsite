@@ -17,7 +17,10 @@
             include ('get_zapis.php');
             foreach($res as $zapis_full){
                 $zapis = $zapis_full["values"];
-                echo '<li>'.'<div class="name_sotrudnik">'.$zapis[2][0][title].'</div>'.'<div class="status">'.$zapis[3][0].'</div>'.'<div class="otcenka">'.$zapis[4].'</div>'.'<div class="text">'.$zapis[7].'</div>'.'</li>';
+                echo '<li class="zapis">'.'<span class="name_sotrudnik">'.$zapis[2][0][title].'</span>'.
+                                          '<span class="status">'.$zapis[3][0].'</span>'.
+                                          '<span class="otcenka">'.$zapis[4].'</span>'.
+                                          '<span class="text">'.$zapis[7].'</span>'.'</li>';
             }
         ?>
         </ul>
