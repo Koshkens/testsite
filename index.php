@@ -12,16 +12,14 @@
         <input type="text" placeholder="   Введите поисковый запрос" class="nav__input">
         <button class="nav__button">поиск</button>
     </div>
-    <div class="list">
-        <ul>
+        <ul class="">
         <?php
             include ('get_zapis.php');
             foreach($res as $zapis_full){
                 $zapis = $zapis_full["values"];
-                echo "<li>".$zapis[2][0][title]."  ".$zapis[3][0]."  ".$zapis[4]."  ".$zapis[7]."</li>";
+                echo '<li>'.'<div class="name_sotrudnik">'.$zapis[2][0][title].'</div>'.'<div class="status">'.$zapis[3][0].'</div>'.'<div class="otcenka">'.$zapis[4].'</div>'.'<div class="text">'.$zapis[7].'</div>'.'</li>';
             }
         ?>
         </ul>
-    </div>
 </body>
 </html>
