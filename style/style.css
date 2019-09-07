@@ -35,3 +35,6 @@ body {
     width: 75px;
     height: 32px;
 }
+.content {
+    background-color: blueviolet;
+}
