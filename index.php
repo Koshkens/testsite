@@ -10,7 +10,7 @@
 <body>
     <div class="nav">
         <form method="post" action="">
-            <input type="text" name="search" placeholder="   Введите поисковый запрос" class="nav__input">
+            <input type="text" name="search" placeholder="Введите поисковый запрос" class="nav__input" value="<?php echo @$_POST["search"]?>">
             <input type="submit" class="nav__button" value="Поиск">
         </form>
     </div>
@@ -21,7 +21,6 @@
                 $status =0;
                 foreach($res as $zapis_full){
                     $zapis = $zapis_full["values"];
-                    $status =0;
                     if($zapis[4]==htmlspecialchars($_POST["search"])){
                         echo '<li class="zapis">'.'<span class="name_sotrudnik">'.$zapis[2][0][title].'</span>'.
                                                 '<span class="status">'.$zapis[3][0].'</span>'.
