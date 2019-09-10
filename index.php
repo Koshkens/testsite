@@ -9,42 +9,25 @@
     <title>Панель</title>
 </head>
 <body>
-    <div class="nav">
-        <form method="post" action="">
-            <input type="text" name="search" placeholder="Введите поисковый запрос" class="nav__input" value="<?php echo @$_POST["search"]?>">
-            <input type="submit" class="nav__button" value="Поиск">
-        </form>
-    </div>
+    <span class="nav">
+            <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav__input">
+    </span>
     <div class="content">
-        <ul class="">
-            <?php
-                include ('get_zapis.php');
-                $status =0;
-                foreach($res as $zapis_full){
-                    $zapis = $zapis_full["values"];
-                    if($zapis[4]==htmlspecialchars($_POST["search"])){
-                        echo '<li class="zapis">'.'<span class="name_sotrudnik">'.$zapis[2][0][title].'</span>'.
-                                                '<span class="status">'.$zapis[3][0].'</span>'.
-                                                '<span class="otcenka">'.$zapis[4].'</span>'.
-                                                '<span class="text">'.$zapis[7].'</span>'.'</li>';
-                        $status++;
-                    }elseif(htmlspecialchars($_POST["search"])==""){
-                        echo '<li class="zapis">'.'<span class="name_sotrudnik">'.$zapis[2][0][title].'</span>'.
-                                                '<span class="status">'.$zapis[3][0].'</span>'.
-                                                '<span class="otcenka">'.$zapis[4].'</span>'.
-                                                '<span class="text">'.$zapis[7].'</span>'.'</li>';
-                                                echo '<li class="zapis">'.'<span class="name_sotrudnik">'.$zapis[2][0][title].'</span>'.
-                                                '<span class="status">'.$zapis[3][0].'</span>'.
-                                                '<span class="otcenka">'.$zapis[4].'</span>'.
-                                                '<span class="text">'.$zapis[7].'</span>'.'</li>';
-                        $status++;
+        <ul  class="elastic">
+            <form target="_blank" method="get" action="php/entry.php">
+                <?php
+                    include ('php/get_catalog.php');
+                    foreach($res as $entry){
+                        $elem = $entry["values"];
+                        echo '<li class="entry"><button type="submit">'.'<span class="name_sotrudnik">'.$elem[2][0][title].'</span>'.
+                                                '<span class="status">'.$elem[3][0].'</span>'.
+                                                '<span class="otcenka">'.$elem[4].'</span>'.
+                                                '<span class="text">'.$elem[7].'</span>'.'</button></li>';
                     }
-                }
-                if($status==0){
-                echo '<li><h2>Ничего не найденно</h2></li>';
-                }
-            ?>
+                ?>
+            </form>
         </ul>
     </div>
+    <script src="js/live_search.js"></script>
 </body>
 </html>
