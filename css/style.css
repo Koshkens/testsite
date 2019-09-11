@@ -16,10 +16,10 @@ ul {
 body {
    background: url(../img/bkimg.jpg);
    background-attachment: fixed;
+   max-width: 1920px;
 }
 button{
     -webkit-appearance: none;
-    -webkit-writing-mode: vertical-lr !important;
     text-rendering: auto;
     color: buttontext;
     letter-spacing: normal;
@@ -55,7 +55,7 @@ button:focus {
     height: 50px;
     background-color: rgb(98, 208, 228);
 }
-.nav__input {
+.nav_input {
     margin: 10px auto;
     margin-left: 30px;
     padding-left: 10px;
@@ -65,25 +65,31 @@ button:focus {
     border-radius: 50px;
 
 }
-.nav__button {
-    position: relative;
-    left: -50px;
+.nav_element {
+    text-decoration: none;
+    font-size: 16px;
     color: #fff;
-    border: none;
-    border-radius: 60px;
-    background-color: rgb(63, 63, 189);
-    width: 75px;
-    height: 32px;
+    margin: 10px auto;
+    margin-left: 10px;
+    padding: 5px;
 }
+
+.nav_element:hover{
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
 .content {
     margin: 25px auto;
     margin-top: 70px;
+    min-width: 1200px;
+    max-width: 1920px;
 }
 
 .entry{
     margin: 5px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
 }
  
@@ -99,8 +105,38 @@ button:focus {
     height: 12pt;
     display: inline-block;
     max-width: 200px;
-    min-width: 100px;
+    font-weight: bold;
+}
+
+.entry:hover{
+    border: 5px solid rgb(98, 208, 228);
 }
 .elastic li.hide {
     display: none;
+}
+.date, .status, .title, .description, .contact, .LPR_name, .segment{
+    min-width: 100px;
+}
+.status{
+    width: 140px    ;
+}
+
+.red{
+    color:red;
+}
+
+.yellow{
+    color:yellowgreen;
+}
+
+.green{
+    color:green;
+}
+
+.ok{
+    background-image:url(../img/ok.ico); 
+    width:16px; 
+    height:16px; 
+    display:inline-block;
+    vertical-align:bottom;
 }
