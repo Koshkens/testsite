@@ -98,19 +98,8 @@ button:focus {
     white-space: nowrap;
     height: 12pt;
     display: inline-block;
-
-}
-.name_sotrudnik{
-    width: 150px;
-}
-.status{
-    width: 10px;
-}
-.otcenka{
-    width: 10px;
-}
-.text{
-    width: 150px;
+    max-width: 200px;
+    min-width: 100px;
 }
 .elastic li.hide {
     display: none;

@@ -1,10 +1,10 @@
 <?php
 // домен и авторизация
-$domen = 'koshkens.bpium.ru';
-$user = 'cawa.kaka@mail.ru';
-$pass = '099777ka';
+$domen = 'makiage.bpium.ru';
+$user = 'makiagecentre@gmail.com';
+$pass = '444111aF';
 
-$catalog_id = 11;
+$catalog_id = 17;
 
 // запрос
 $ch = curl_init("https://$domen/api/v1/catalogs/$catalog_id/records");
@@ -18,4 +18,11 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 );
 $result = curl_exec($ch);
 $res = json_decode($result,true);
+//var_dump ($res[1]);
+// $res = Array(
+//     'huy' => $result
+// );
+
+// echo json_encode($res);
+
 ?>
