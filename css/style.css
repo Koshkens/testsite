@@ -11,10 +11,10 @@ li {
 }
 ul {
     margin-left: 0; 
-    padding-left: 0; 
+    padding-left: 0;
 }
 body {
-   background: url(../img/bkimg.jpg);
+   background: url(../img/bkimg.jpg) no-repeat;
    background-attachment: fixed;
    max-width: 1920px;
 }
@@ -72,28 +72,47 @@ button:focus {
     margin: 10px auto;
     margin-left: 10px;
     padding: 5px;
+    transition: .5s;
 }
-
 .nav_element:hover{
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 25px;
+    transform: scale(1.02);
+    transition: .1s;
 }
 
 .content {
     margin: 25px auto;
     margin-top: 70px;
-    min-width: 1200px;
+    min-width: 1400px;
     max-width: 1920px;
 }
-
 .entry{
     margin: 5px;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
+    transition: .5s;
 }
- 
-
+.sample{
+    margin: 5px;
+    padding: 15px;
+    background-color: rgba(98, 208, 228, 0.500);
+    border-radius: 25px;
+}
+.sample span{
+    padding: 8px;
+    margin-right: 5px;
+    background-color: rgba(255, 255, 255, 0.500);
+    border-radius: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 12pt;
+    display: inline-block;
+    max-width: 200px;
+    text-align: center;
+}
 .entry span{
     padding: 8px;
     margin-right: 5px;
@@ -110,15 +129,26 @@ button:focus {
 
 .entry:hover{
     border: 5px solid rgb(98, 208, 228);
+    transform: scale(1.02);
+    transition: .3s;
 }
 .elastic li.hide {
     display: none;
 }
-.date, .status, .title, .description, .contact, .LPR_name, .segment{
-    min-width: 100px;
+.title, .contact, .LPR_name, .segment{
+    width:180px;
+}
+.description{
+    width:200px;
+}
+.id{
+    width: 18px;
+}
+.date{
+    width: 60px;
 }
 .status{
-    width: 140px    ;
+    width: 140px;
 }
 
 .red{
