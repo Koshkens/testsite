@@ -59,28 +59,44 @@ input{
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 12pt;
-    max-width: 200px;
     text-align: center;
 }
-.status__button {
-    border-style: none;
-    border-color: none;
-    border-image: none;
-    outline: none;
-    background-color: inherit;
-    margin-left: 15px;
-    padding: 7px;
-    border-radius: 25px;
-    width: 140px;
-    padding: 8px;
-}
-.status__button:hover {
-    background-color: rgba(255, 255, 255, 0.500);
-}
+
 .date, .status, .title, .description, .contact, .LPR_name, .segment{
     margin: 15px;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
 }
-
+.submit__btn {
+    margin-left: 15px;
+    width: 100px;
+    height: 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: rgb(98, 208, 228);
+}
+.title__text, .contact_text {
+    background-color: rgba(255, 255, 255, 0.500);
+    outline: none;
+    padding: 8px;
+    border: none;
+    border-radius: 60px;
+}
+.description__text {
+    background-color: rgba(255, 255, 255, 0.500);
+    padding: 8px;
+    border: none;
+    border-radius: 60px;
+    width: unset !important;
+}
+.LPR_name__text {
+    background-color: rgba(255, 255, 255, 0.500);
+    padding: 8px;
+    border: none;
+    border-radius: 60px;
+    width: unset;
+}

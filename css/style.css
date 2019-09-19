@@ -80,6 +80,17 @@ button:focus {
     transform: scale(1.02);
     transition: .1s;
 }
+.new_element {
+    margin: 10px;
+    position: fixed;
+    right: 0;
+    text-decoration: none;
+    color: rgb(98, 208, 228);;
+    background-color:#fff;
+    padding: 7px;
+    border-radius: 25px;
+    font-size: 16px;
+}
 
 .content {
     margin: 25px auto;
@@ -132,6 +143,7 @@ button:focus {
     transform: scale(1.02);
     transition: .3s;
 }
+
 .elastic li.hide {
     display: none;
 }

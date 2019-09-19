@@ -14,6 +14,7 @@
             <a class="nav_element" href="#">HR</a>
             <a class="nav_element" href="#">Мастера</a>
             <a class="nav_element" href="./index.php">Продажи</a>
+            <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
     </span>
     <div class="content">
         <ul  class="elastic">
@@ -28,6 +29,7 @@
                                                 '<span class="contact">Контакты</span>'.
                                                 '<span class="LPR_name">ЛПР Имя</span>'.
                                                 '<span class="segment">Сегмент</span>'.'</li>';
+                    $res =  array_reverse($res);
                     foreach($res as $entry_full){
                         $entry = $entry_full["values"];
 
@@ -77,7 +79,7 @@
                         foreach($entry[6] as $temp){
                             $contact = $contact.$temp["contact"]."; "; 
                         }
-
+                        
                         switch ($entry[3][0]) {
                             case '1':
                                 $status = '<div class="green">Работаем</div>';
@@ -87,6 +89,9 @@
                                 break;
                             case '3':
                                 $status = '<div class="red">Холодный клиент</div>';
+                                break;
+                            default:
+                                $status = "<div></div>";
                                 break;
                         }
                         $title = $entry[4];
