@@ -1,6 +1,6 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13pt;
+    font-size: 14pt;
 }
 h1, h2, h3, h4, h5, h6, ul {
 	padding: 0;
@@ -14,14 +14,15 @@ ul {
     padding-left: 0;
 }
 body {
-   background: url(../img/bkimg.jpg) no-repeat;
+   background-color: rgb(50,54,57);
    background-attachment: fixed;
    max-width: 1920px;
+   color: #fff;
 }
 button{
     -webkit-appearance: none;
     text-rendering: auto;
-    color: buttontext;
+    color: rgba(255, 255, 255, 0.829);
     letter-spacing: normal;
     word-spacing: normal;
     text-transform: none;
@@ -34,7 +35,7 @@ button{
     background-color: transparent;    ;
     box-sizing: content-box;
     margin: 0em;
-    font: 400 13.3333px Arial;
+    font: 400 14px Arial;
     padding: 0;
     border-width: 0;
     border-style: none;
@@ -101,9 +102,10 @@ button:focus {
 .entry{
     margin: 5px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     transition: .5s;
+    color: #fff;
 }
 .sample{
     margin: 5px;
@@ -123,11 +125,12 @@ button:focus {
     display: inline-block;
     max-width: 200px;
     text-align: center;
+    color: #fff;
 }
 .entry span{
     padding: 8px;
     margin-right: 5px;
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -97,9 +97,12 @@
             <input type=hidden name="time" value="<?php echo $time ?>">
         </div>
         <div class="status"><span class="status__title, titleOf">Статус</span>
-            <span><input type="radio" name="status[]" value="1" class="status__button" <?php echo $status[0]?>>Работаем</span>
+            <span><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</span>
+            <label for="Работаем"></label>
             <span><input type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >Переговоры</span>
+            <label for="Переговоры"></label>
             <span><input type="radio" name="status[]" value="3" class="status__button" <?php echo $status[2]?> >Холодный клиент</span>
+            <label for="Холодный клиент"></label>
         </div>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
@@ -120,7 +123,8 @@
         </div>
         <div class="LPR_name">
             <span class="LPR_name__title, titleOf">ЛПР Имя</span>
-            <input class="LPR_name__text" name="LPR_name" type="text" value="<?php echo $LPR_name?>">
+            <textarea class="LPR_name__text" name="LPR_name"  type="text"><?php echo $LPR_name?></textarea>
+            <!-- <input class="LPR_name__text" name="LPR_name" type="text" value="<?php// echo $LPR_name?>"> -->
         </div>
         <div class="contact">
             <span class="contact__title, titleOf">Контакты</span>

@@ -17,6 +17,7 @@ button{
     color: buttontext;
     letter-spacing: normal;
     word-spacing: normal;
+    /* sasha lox */
     text-transform: none;
     text-indent: 0px;
     text-shadow: none;
@@ -51,14 +52,17 @@ input{
     border-radius: 60px;
 }
 .titleOf{
-    padding: 8px;
-    margin-right: 5px;
+    display: flex;
+    width: 80px;
+    padding: 9px;
+    margin-bottom: 8px;
     background-color: rgba(255, 255, 255, 0.500);
     border-radius: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    height: 12pt;
+    height: 12px;
+    align-items: center;
     text-align: center;
 }
 
@@ -87,6 +91,7 @@ input{
     border-radius: 60px;
 }
 .description__text {
+    outline: none;
     background-color: rgba(255, 255, 255, 0.500);
     padding: 8px;
     border: none;
@@ -94,9 +99,15 @@ input{
     width: unset !important;
 }
 .LPR_name__text {
+    font-size: 16px;
+    font-weight: 400;
+    width: 70%;
+    height: 120px;
+    outline: none;
     background-color: rgba(255, 255, 255, 0.500);
     padding: 8px;
     border: none;
-    border-radius: 60px;
-    width: unset;
+    border-radius: 20px;
+    resize: none;
+    overflow-y: auto;
 }

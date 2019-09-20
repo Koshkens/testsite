@@ -11,9 +11,6 @@
 <body>
     <span class="nav">
             <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input">
-            <a class="nav_element" href="#">HR</a>
-            <a class="nav_element" href="#">Мастера</a>
-            <a class="nav_element" href="./index.php">Продажи</a>
             <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
     </span>
     <div class="content">
@@ -79,7 +76,9 @@
                         foreach($entry[6] as $temp){
                             $contact = $contact.$temp["contact"]."; "; 
                         }
-                        
+                        if (!isset($entry[3][0])){
+                            $entry[3]= array('5');
+                        }
                         switch ($entry[3][0]) {
                             case '1':
                                 $status = '<div class="green">Работаем</div>';
@@ -136,6 +135,7 @@
                                                 '<span class="contact">'.$contact.'</span>'.
                                                 '<span class="LPR_name">'.$LPR_name.'</span>'.
                                                 '<span class="segment">'.$segment.'</span>'.'</button></li></form>';
+                        
                                                 
                                                 
                     }
