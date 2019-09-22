@@ -87,10 +87,13 @@
                                 $status = '<div class="yellow">Переговоры</div>';
                                 break;
                             case '3':
-                                $status = '<div class="red">Холодный клиент</div>';
+                                $status = '<div class="lite-red">Холодный клиент</div>';
+                                break;
+                            case '4':
+                                $status = '<div class="red">Не работаем</div>';
                                 break;
                             default:
-                                $status = "<div></div>";
+                                $status = '<div class="red">Не работаем</div>';
                                 break;
                         }
                         $title = $entry[4];

@@ -13,19 +13,22 @@
         if(isset($_POST["status"])||isset($_POST["segment"])||isset($_POST["date"])||isset($_POST["title"])||isset($_POST["description"])||isset($_POST["LPR_name"])||isset($_POST["contact"])){
             $time="T09:05:51.019Z";
             $values = array();
-            $values['2'] = $_POST["date"].$time;
+            if($_POST["date"]=="") $_POST["date"]=date('Y-m-d');
+            $values['2'] = $_POST["date"].$_POST["time"];
             $values['3'] = $_POST["status"];
+            if(!isset($_POST["title"])) $_POST["title"]='';
             $values['4'] = $_POST["title"]; 
+            if(!isset($_POST["description"])) $_POST["description"]='';
             $values['5'] = $_POST["description"];
+            if(!isset($_POST["LPR_name"])) $_POST["LPR_name"]='';
             $values['6'] = array();
             $_POST["contact"] = array_filter($_POST["contact"]);
             foreach($_POST["contact"] as $contact){
                 array_push($values['6'], array("contact" => $contact));
             }
             $values['7'] = $_POST["LPR_name"];
+            if(!isset($_POST["segment"])) $_POST["segment"]=array();
             $values['8'] = $_POST["segment"];
-            $values = array_filter($values);
-            
             // подготовка тела запроса
             $data = array();
             $data['values'] = $values;

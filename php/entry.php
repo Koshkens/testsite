@@ -10,29 +10,31 @@
 </head>
 <body>
     <?php
-        $entry_id = $_GET['entry_id'];
         if(isset($_POST["status"])||isset($_POST["segment"])||isset($_POST["date"])||isset($_POST["title"])||isset($_POST["description"])||isset($_POST["LPR_name"])||isset($_POST["contact"])){
             $values = array();
+            if($_POST["date"]=="") $_POST["date"]=date('Y-m-d');
             $values['2'] = $_POST["date"].$_POST["time"];
             $values['3'] = $_POST["status"];
+            if(!isset($_POST["title"])) $_POST["title"]='';
             $values['4'] = $_POST["title"]; 
+            if(!isset($_POST["description"])) $_POST["description"]='';
             $values['5'] = $_POST["description"];
+            if(!isset($_POST["LPR_name"])) $_POST["LPR_name"]='';
             $values['6'] = array();
             $_POST["contact"] = array_filter($_POST["contact"]);
             foreach($_POST["contact"] as $contact){
                 array_push($values['6'], array("contact" => $contact));
             }
             $values['7'] = $_POST["LPR_name"];
+            if(!isset($_POST["segment"])) $_POST["segment"]=array();
             $values['8'] = $_POST["segment"];
-            $values = array_filter($values);
-            
             // подготовка тела запроса
             $data = array();
             $data['values'] = $values;
             $data_json = json_encode($data);
             $entry_id = $_POST['entry_id'];
             include ('./update_entry.php');
-        }
+        }else{$entry_id = $_GET['entry_id'];}
         include ('./get_entry.php');
         $entry=$res["values"];
         $date = substr (date('Y-m-d H:i:s', strtotime($entry[2])),0,10);
@@ -42,7 +44,7 @@
         foreach($entry[6] as $temp){
             $contact = $contact.'<input class="contact_text" name="contact[]" type="text" value="'.$temp["contact"].'">';
         }
-
+        $status = array_fill(0,4,'');
         switch ($entry[3][0]) {
             case '1':
                 $status[0] = "checked";
@@ -59,7 +61,7 @@
         $description = $entry[5];
 
         $LPR_name = $entry[7];
-
+        $segment = array_fill(0,11,'');
         foreach($entry[8] as $num_of_segment){
             switch ($num_of_segment){
                 case '1':
@@ -89,8 +91,8 @@
         <form method='post' action="./entry.php">
         <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
         <div class="battons">
-            <input class="submit__btn" type="submit" value="Сохранить">
-            <input class="submit__btn" type="submit" value="Удалить">
+            <input class="submit__btn" type="submit" id="save" value="Сохранить">
+            <input class="submit__btn" type="submit" id="delite" value="Удалить">
         </div>
         <div class="date">
             <span class="date__title, titleOf">Дата</span> <input class="date__input" type="date" name="date" value="<?php echo $date?>">
@@ -115,16 +117,15 @@
         </div>
         <div class="title">
             <span class="title__title, titleOf">Название</span>
-            <input class="title__text" name="title" type="text" value="<?php echo $title?>">
+            <textarea class="title__text" name="title"  type="text"><?php echo $title?></textarea>
         </div>
         <div class="description">
             <span class="description__title, titleOf">Описание</span>
-            <input class="description__text" name="description" type="text" value="<?php echo $description?>">
+            <textarea class="description__text" name="description"  type="text"><?php echo $description?></textarea>
         </div>
         <div class="LPR_name">
             <span class="LPR_name__title, titleOf">ЛПР Имя</span>
             <textarea class="LPR_name__text" name="LPR_name"  type="text"><?php echo $LPR_name?></textarea>
-            <!-- <input class="LPR_name__text" name="LPR_name" type="text" value="<?php// echo $LPR_name?>"> -->
         </div>
         <div class="contact">
             <span class="contact__title, titleOf">Контакты</span>
@@ -132,5 +133,7 @@
         </div>
         </form>
     </div>
+    
+    <script src="../js/auto_size.js"></script>
 </body>
 </html>

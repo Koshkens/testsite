@@ -1,15 +1,18 @@
 html {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13pt;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.829);
 }
 h1, h2, h3, h4, h5, h6, ul {
 	padding: 0;
 	margin: 0;
 }
 body {
-   background: url(../img/bkimg.jpg);
+   background-color: rgb(50,54,57);
    background-attachment: fixed;
    max-width: 1920px;
+   color: rgba(255, 255, 255, 0.829);
 }
 button{
     -webkit-appearance: none;
@@ -45,18 +48,20 @@ input{
     margin-top: 50px;
 }
 .date__input {
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(0, 0, 0, 0);
     outline: none;
     padding: 8px;
     border: none;
     border-radius: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
 }
 .titleOf{
     display: flex;
     width: 80px;
     padding: 9px;
     margin-bottom: 8px;
-    background-color: rgba(255, 255, 255, 0.500);
     border-radius: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -69,9 +74,10 @@ input{
 .date, .status, .title, .description, .contact, .LPR_name, .segment{
     margin: 15px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
 }
+
 .submit__btn {
     margin-left: 15px;
     width: 100px;
@@ -83,31 +89,38 @@ input{
     outline: none;
     background-color: rgb(98, 208, 228);
 }
-.title__text, .contact_text {
-    background-color: rgba(255, 255, 255, 0.500);
+ .contact_text {
+    width: 35%;
+    height: 30px;
     outline: none;
-    padding: 8px;
-    border: none;
-    border-radius: 60px;
-}
-.description__text {
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.500);
-    padding: 8px;
-    border: none;
-    border-radius: 60px;
-    width: unset !important;
-}
-.LPR_name__text {
-    font-size: 16px;
-    font-weight: 400;
-    width: 70%;
-    height: 120px;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 8px;
     border: none;
     border-radius: 20px;
     resize: none;
     overflow-y: auto;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.829);
+    margin-right: 10px;
+    margin-bottom: 10px; 
 }
+
+.LPR_name__text, .description__text, .title__text {
+    width: 70%;
+    min-height: 120px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    resize: none;
+    overflow-y: auto;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.829);
+    max-height: 400px;
+}
+
