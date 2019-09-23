@@ -119,7 +119,7 @@
             <input type=hidden name="time" value="<?php echo $time ?>">
         </div>
         <div class="status"><span class="status__title, titleOf">Статус</span>
-            <span><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</span>
+            <span class="ramki"><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</span>
             <label for="Работаем"></label>
             <span><input type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >Переговоры</span>
             <label for="Переговоры"></label>
@@ -159,7 +159,7 @@
             <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" placeholder="Новый контакт">
         </div>
         </form>
-    </<span>
+    </div>
     
     <script src="../js/auto_size.js"></script>
 </body>
