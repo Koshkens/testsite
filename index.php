@@ -16,6 +16,16 @@
             <span class="entry_amount" id="entry_amount"></span>
             <span id="datetime" class="datetime"></span>
     </span>
+    <div class="filter">
+        <div class="filter__status">
+            <h3 class="filter__status_title">Статус</h3>
+            <button class="filter__status_btn">Холодный клиент</button>
+            <button class="filter__status_btn">Переговоры</button>
+            <button class="filter__status_btn">Работаем</button>
+            <button class="filter__status_btn">Не работаем</button>
+
+        </div>
+    </div>
     <div class="content">
         <ul  class="elastic">
                 <?php
