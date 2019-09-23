@@ -19,10 +19,10 @@
     <div class="filter">
         <div class="filter__status">
             <h3 class="filter__status_title">Статус</h3>
-            <button class="filter__status_btn">Работаем</button>
-            <button class="filter__status_btn">Переговоры</button>
-            <button class="filter__status_btn">Холодный клиент</button>
-            <button class="filter__status_btn">Не работаем</button>
+            <button class="filter__status_btn" id="btn1">Работаем</button>
+            <button class="filter__status_btn" id="btn2">Переговоры</button>
+            <button class="filter__status_btn" id="btn3">Холодный клиент</button>
+            <button class="filter__status_btn" id="btn4">Не работаем</button>
         </div>
         <div class="filter__segment">
             <h3 class="filter__segment_title">Сегмент</h3>
@@ -186,5 +186,6 @@
     <script src="js/script.js"></script>
     <script src="js/live_search.js"></script>
     <script src="js/datetime.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 </html>

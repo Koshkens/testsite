@@ -40,11 +40,11 @@ body {
     margin: 5px auto;
     padding: 3px;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     width: 130px;
     height: 30px;
     border-radius: 25px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .filter__segment, .filter__status {
     margin-left: 10px;
