@@ -12,6 +12,7 @@
     <span class="nav">
             <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input">
             <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
+            <a class="stat" href="./php/stat.php" target="_blank">Статистика</a>
             <span class="entry_amount" id="entry_amount"></span>
             <span id="datetime" class="datetime"></span>
     </span>
@@ -150,7 +151,7 @@
                         echo '
                         <form target="_blank" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
-                        <li class="entry '.$color.'"><button class="button" type="submit">'.
+                        <button class="button" type="submit"><li class="entry '.$color.'">'.
                                                 '<span class="id">'.$entry_full["id"].'</span>'.
                                                 '<span class="date">'.$date.'</span>'.
                                                 '<span class="status">'.$status.'</span>'.
@@ -158,7 +159,7 @@
                                                 '<span class="description">'.$description.'</span>'.
                                                 '<span class="contact">'.$contact.'</span>'.
                                                 '<span class="LPR_name">'.$LPR_name.'</span>'.
-                                                '<span class="segment">'.$segment.'</span>'.'</button></li></form>';
+                                                '<span class="segment">'.$segment.'</span>'.'</li></button></form>';
                         
                                                 
                                                 

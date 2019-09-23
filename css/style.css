@@ -76,14 +76,17 @@ button:focus {
     padding: 5px;
     transition: .5s;
 }
-.new_element {
-    margin: 15px;
+.new_element, .stat {
+    margin-left: 10px;
     text-decoration: none;
     color: rgb(98, 208, 228);;
     background-color:#fff;
     padding: 7px;
     border-radius: 25px;
     font-size: 16px;
+}
+.entry_amount{
+    margin-left: 5px; 
 }
 .datetime{
     position: fixed;
