@@ -23,7 +23,7 @@ body {
 button{
     -webkit-appearance: none;
     text-rendering: auto;
-    color: rgba(255, 255, 255, 0.829);
+    color: rgb(255, 255, 255);
     letter-spacing: normal;
     word-spacing: normal;
     text-transform: none;
@@ -159,19 +159,19 @@ button:focus {
 .status{
     width: 140px;
 }
-.lite-red{
-    color: rgb(202, 33, 33)
-}
 .red{
-    color:red;
+    background-color:rgba(255, 0, 0, 0.5);
 }
 
 .yellow{
-    color:yellowgreen;
+    background-color:rgba(255, 255, 0, 0.5);
 }
 
 .green{
-    color:green;
+    background-color:rgba(0, 128, 0, 0.5);
+}
+.gray{
+    background-color:rgba(128, 128, 128, 0.5);
 }
 
 .ok{

@@ -83,19 +83,24 @@
                         }
                         switch ($entry[3][0]) {
                             case '1':
-                                $status = '<div class="green">Работаем</div>';
+                                $status = '<div>Работаем</div>';
+                                $color = 'green';
                                 break;
                             case '2':
-                                $status = '<div class="yellow">Переговоры</div>';
+                                $status = '<div>Переговоры</div>';
+                                $color = 'yellow';
                                 break;
                             case '3':
-                                $status = '<div class="lite-red">Холодный клиент</div>';
+                                $status = '<div">Холодный клиент</div">';
+                                $color = 'red';
                                 break;
                             case '4':
-                                $status = '<div class="red">Не работаем</div>';
+                                $status = '<div>Не работаем</div>';
+                                $color = 'gray';
                                 break;
                             default:
-                                $status = '<div class="red">Не работаем</div>';
+                                $status = '<div>Не работаем</div>';
+                                $color = 'gray';
                                 break;
                         }
                         $title = $entry[4];
@@ -145,7 +150,7 @@
                         echo '
                         <form target="_blank" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
-                        <li class="entry"><button class="button" type="submit">'.
+                        <li class="entry '.$color.'"><button class="button" type="submit">'.
                                                 '<span class="id">'.$entry_full["id"].'</span>'.
                                                 '<span class="date">'.$date.'</span>'.
                                                 '<span class="status">'.$status.'</span>'.
