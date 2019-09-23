@@ -170,7 +170,7 @@
                         echo '
                         <form target="_blank" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
-                        <button class="button" type="submit"><li class="entry '.$color.'">'.
+                        <button class="button" name="entry" type="submit"><li class="entry '.$color.'">'.
                                                 '<span class="id">'.$entry_full["id"].'</span>'.
                                                 '<span class="title">'.$title.'</span>'.
                                                 '<span class="contact">'.$contact.'</span>'.
