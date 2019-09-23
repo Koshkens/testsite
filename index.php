@@ -25,6 +25,9 @@
             <button class="filter__status_btn">Не работаем</button>
 
         </div>
+        <div class="filter__segment">
+            
+        </div>
     </div>
     <div class="content">
         <ul  class="elastic">
