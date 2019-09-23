@@ -118,8 +118,8 @@
             <span class="date__title, titleOf">Дата</span> <input class="date__input" readonly type="date" name="date" value="<?php echo $date?>">
             <input type=hidden name="time" value="<?php echo $time ?>">
         </div>
-        <div class="status"><span class="status__title, titleOf">Статус</span>
-            <div class="ramki"><span><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</span></div>
+        <span class="status__title, titleOf">Статус</span>
+            <span class="ramki"><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</span>
             <label for="Работаем"></label>
             <span><input type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >Переговоры</span>
             <label for="Переговоры"></label>
@@ -127,7 +127,7 @@
             <label for="Холодный клиент"></label>
             <span><input type="radio" name="status[]" value="4" class="status__button" <?php echo $status[3]?> >Не работаем</span>
             <label for="Не работаем"></label>
-        </div>
+        </<span>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
             <span><input type="checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА на Карте
@@ -159,7 +159,7 @@
             <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" placeholder="Новый контакт">
         </div>
         </form>
-    </div>
+    </<span>
     
     <script src="../js/auto_size.js"></script>
 </body>
