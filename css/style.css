@@ -26,6 +26,7 @@ body {
     float: left;
     width: 25%;
     height: 100%;
+    background-color: rgba(50, 54, 57, 0.5);
 }
 .filter__segment_box {
     float: left;
@@ -172,7 +173,9 @@ button:focus {
     font-weight: bold;
 }
 
-
+.hide{
+    display: none;
+}
 
 .elastic li.hide {
     display: none;
