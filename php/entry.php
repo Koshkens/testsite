@@ -127,7 +127,7 @@
             <label for="Холодный клиент"></label>
             <span><input type="radio" name="status[]" value="4" class="status__button" <?php echo $status[3]?> >Не работаем</span>
             <label for="Не работаем"></label>
-        </<span>
+        </div>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
             <span><input type="checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА на Карте
