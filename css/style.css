@@ -111,13 +111,13 @@ button:focus {
 .sample{
     margin: 5px;
     padding: 15px;
-    background-color: rgba(98, 208, 228, 0.500);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
 }
 .sample span{
     padding: 8px;
     margin-right: 5px;
-    background-color: rgba(255, 255, 255, 0.500);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
