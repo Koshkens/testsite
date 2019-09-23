@@ -22,10 +22,7 @@
                     include ('php/get_catalog.php');
                     echo '<li class="sample">'.
                                                 '<span class="id">ID</span>'.
-                                                '<span class="date">Дата</span>'.
-                                                '<span class="status">Статус</span>'.
                                                 '<span class="title">Название</span>'.
-                                                '<span class="description">Переговоры</span>'.
                                                 '<span class="contact">Контакты</span>'.
                                                 '<span class="LPR_name">ЛПР Имя</span>'.
                                                 '<span class="segment">Сегмент</span>'.'</li>';
@@ -153,10 +150,7 @@
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
                         <button class="button" type="submit"><li class="entry '.$color.'">'.
                                                 '<span class="id">'.$entry_full["id"].'</span>'.
-                                                '<span class="date">'.$date.'</span>'.
-                                                '<span class="status">'.$status.'</span>'.
                                                 '<span class="title">'.$title.'</span>'.
-                                                '<span class="description">'.$description.'</span>'.
                                                 '<span class="contact">'.$contact.'</span>'.
                                                 '<span class="LPR_name">'.$LPR_name.'</span>'.
                                                 '<span class="segment">'.$segment.'</span>'.'</li></button></form>';
