@@ -12,10 +12,6 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "$user:$pass");
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json',
-    'Content-Length: ' . strlen($data_json))
-);
 $result = curl_exec($ch);
 $res = json_decode($result,true);
 curl_close($ch);
