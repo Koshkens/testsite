@@ -39,48 +39,59 @@
                 <span class="added">Запись добавлена!</span>    
             ';
         }else{
+    $date = date('Y-m-d');
     echo '<div class="entry">
         <form method="post" action="">
-        <input type=hidden name="entry_id" value="">
         <div class="save_batton">
             <input class="submit__btn" type="submit" value="Добавить">
         </div>
         <div class="date">
-            <span class="date__title, titleOf">Дата</span> <input class="date__input" type="date" name="date" value="">
+            <span class="date__title, titleOf">Дата</span> <input class="date__input" readonly type="date" name="date" value="'.$date.'">
             <input type=hidden name="time" value="">
         </div>
         <div class="status"><span class="status__title, titleOf">Статус</span>
-            <span><input type="radio" name="status[]" value="1" class="status__button">Работаем</span>
-            <span><input type="radio" name="status[]" value="2" class="status__button">Переговоры</span>
-            <span><input type="radio" name="status[]" value="3" class="status__button">Холодный клиент</span>
+        <span><input type="radio" name="status[]" value="1" class="status__button">Работаем</span>
+        <label for="Работаем"></label>
+        <span><input type="radio" name="status[]" value="2" class="status__button">Переговоры</span>
+        <label for="Переговоры"></label>
+        <span><input type="radio" name="status[]" value="3" class="status__button">Холодный клиент</span>
+        <label for="Холодный клиент"></label>
+        <span><input type="radio" name="status[]" value="4" class="status__button" checked>Не работаем</span>
+        <label for="Не работаем"></label>
         </div>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
-            <input type="checkbox" name="segment[]" value="1">Партнер ЭРА
-            <input type="checkbox" name="segment[]" value="2">Визажист
-            <input type="checkbox" name="segment[]" value="3">Магазин офлайн
-            <input type="checkbox" name="segment[]" value="4">ВК
-            <input type="checkbox" name="segment[]" value="5">Insta
-            <input type="checkbox" name="segment[]" value="6">300 руб
+            <span><input type="checkbox" name="segment[]" value="1">Партнер ЭРА на Карте
+            <span><input type="checkbox" name="segment[]" value="2">Визажист Стилист</span>
+            <span><input type="checkbox" name="segment[]" value="3">Магазин офлайн</span>
+            <span><input type="checkbox" name="segment[]" value="4">Группа ВК Продажа Косметики</span>
+            <span><input type="checkbox" name="segment[]" value="5">Insta Продажа Косметики</span>
+            <span><input type="checkbox" name="segment[]" value="6">Аренда рабочего места - 300 руб</span>
+            <span><input type="checkbox" name="segment[]" value="7">Сеть магазинов <br></span>
+            <span><input type="checkbox" name="segment[]" value="8">Интернет магазин</span>
+            <span><input type="checkbox" name="segment[]" value="9">Склад-Дистрибьютор</span>
+            <span><input type="checkbox" name="segment[]" value="10">Потребитель</span>
+            <span><input type="checkbox" name="segment[]" value="11">Салон красоты</span>
         </div>
         <div class="title">
             <span class="title__title, titleOf">Название</span>
-            <input class="title__text" name="title" type="text" value="">
+            <textarea class="title__text" name="title"  type="text"></textarea>
         </div>
         <div class="description">
-            <span class="description__title, titleOf">Описание</span>
-            <input class="description__text" name="description" type="text" value="">
+            <span class="description__title, titleOf">Переговоры</span>
+            <textarea class="description__text" name="description"  type="text"></textarea>
         </div>
         <div class="LPR_name">
             <span class="LPR_name__title, titleOf">ЛПР Имя</span>
-            <input class="LPR_name__text" name="LPR_name" type="text" value="">
+            <textarea class="LPR_name__text" name="LPR_name" type="text"></textarea>
         </div>
         <div class="contact">
             <span class="contact__title, titleOf">Контакты</span>
             <input class="contact_text" name="contact[]" type="text" value="" placeholder="Новый контакт">
         </div>
         </form>
-    </div>';}
+    </div>
+    <script src="../js/auto_size.js"></script>';}
     ?>
 </body>
 </html>

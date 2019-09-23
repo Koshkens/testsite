@@ -1,7 +1,7 @@
 function flexibleTextarea(){
 	var _txt = document.getElementsByTagName('textarea'); // здесь comment - это идентификатор поля, которое будет растягиваться.
 	var _minRows = 7; // минимальное количество строк (высота поля)
-
+	
 	for (let i = 0; i < _txt.length; i++)
 	if (_txt[i]) {
 		// функция расчета строк

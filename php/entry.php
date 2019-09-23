@@ -12,7 +12,6 @@
     <?php
         if(isset($_POST["status"])||isset($_POST["segment"])||isset($_POST["date"])||isset($_POST["title"])||isset($_POST["description"])||isset($_POST["LPR_name"])||isset($_POST["contact"])){
             $values = array();
-            if($_POST["date"]=="") $_POST["date"]=date('Y-m-d');
             $values['2'] = $_POST["date"].$_POST["time"];
             $values['3'] = $_POST["status"];
             if(!isset($_POST["title"])) $_POST["title"]='';
@@ -55,6 +54,12 @@
             case '3':
                 $status[2] = "checked";
                 break;
+            case '4':
+                $status[3] = "checked";
+                break;
+            default:
+                $status[3] = "checked";
+                break;
         }
         $title = $entry[4];
 
@@ -82,6 +87,21 @@
                 case '6':
                     $segment[5] = "checked";
                     break;
+                case '7':
+                    $segment[6]="checked";
+                    break;
+                case '8':
+                    $segment[7] = "checked";
+                    break;
+                case '9':
+                    $segment[8] = "checked";
+                    break;
+                case '10':
+                    $segment[9] = "checked";
+                    break;
+                case '11':
+                    $segment[10] = "checked";
+                    break;
                 
             }
         }
@@ -92,10 +112,10 @@
         <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
         <div class="battons">
             <input class="submit__btn" type="submit" id="save" value="Сохранить">
-            <input class="submit__btn" type="submit" id="delite" value="Удалить">
+            <span class="id">ID: <?php echo $entry_id ?></span>
         </div>
         <div class="date">
-            <span class="date__title, titleOf">Дата</span> <input class="date__input" type="date" name="date" value="<?php echo $date?>">
+            <span class="date__title, titleOf">Дата</span> <input class="date__input" readonly type="date" name="date" value="<?php echo $date?>">
             <input type=hidden name="time" value="<?php echo $time ?>">
         </div>
         <div class="status"><span class="status__title, titleOf">Статус</span>
@@ -105,22 +125,29 @@
             <label for="Переговоры"></label>
             <span><input type="radio" name="status[]" value="3" class="status__button" <?php echo $status[2]?> >Холодный клиент</span>
             <label for="Холодный клиент"></label>
+            <span><input type="radio" name="status[]" value="4" class="status__button" <?php echo $status[3]?> >Не работаем</span>
+            <label for="Не работаем"></label>
         </div>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
-            <input type="checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА
-            <input type="checkbox" name="segment[]" value="2"<?php echo $segment[1] ?>>Визажист
-            <input type="checkbox" name="segment[]" value="3"<?php echo $segment[2] ?>>Магазин офлайн
-            <input type="checkbox" name="segment[]" value="4"<?php echo $segment[3] ?>>ВК
-            <input type="checkbox" name="segment[]" value="5"<?php echo $segment[4] ?>>Insta
-            <input type="checkbox" name="segment[]" value="6"<?php echo $segment[5] ?>>300 руб
+            <span><input type="checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА на Карте
+            <span><input type="checkbox" name="segment[]" value="2"<?php echo $segment[1] ?>>Визажист Стилист</span>
+            <span><input type="checkbox" name="segment[]" value="3"<?php echo $segment[2] ?>>Магазин офлайн</span>
+            <span><input type="checkbox" name="segment[]" value="4"<?php echo $segment[3] ?>>Группа ВК Продажа Косметики</span>
+            <span><input type="checkbox" name="segment[]" value="5"<?php echo $segment[4] ?>>Insta Продажа Косметики</span>
+            <span><input type="checkbox" name="segment[]" value="6"<?php echo $segment[5] ?>>Аренда рабочего места - 300 руб</span>
+            <span><input type="checkbox" name="segment[]" value="7"<?php echo $segment[6] ?>>Сеть магазинов <br></span>
+            <span><input type="checkbox" name="segment[]" value="8"<?php echo $segment[7] ?>>Интернет магазин</span>
+            <span><input type="checkbox" name="segment[]" value="9"<?php echo $segment[8] ?>>Склад-Дистрибьютор</span>
+            <span><input type="checkbox" name="segment[]" value="10"<?php echo $segment[9] ?>>Потребитель</span>
+            <span><input type="checkbox" name="segment[]" value="11"<?php echo $segment[10] ?>>Салон красоты</span>
         </div>
         <div class="title">
             <span class="title__title, titleOf">Название</span>
             <textarea class="title__text" name="title"  type="text"><?php echo $title?></textarea>
         </div>
         <div class="description">
-            <span class="description__title, titleOf">Описание</span>
+            <span class="description__title, titleOf">Переговоры</span>
             <textarea class="description__text" name="description"  type="text"><?php echo $description?></textarea>
         </div>
         <div class="LPR_name">

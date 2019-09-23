@@ -12,6 +12,8 @@
     <span class="nav">
             <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input">
             <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
+            <span class="entry_amount" id="entry_amount"></span>
+            <span id="datetime" class="datetime"></span>
     </span>
     <div class="content">
         <ul  class="elastic">
@@ -22,7 +24,7 @@
                                                 '<span class="date">Дата</span>'.
                                                 '<span class="status">Статус</span>'.
                                                 '<span class="title">Название</span>'.
-                                                '<span class="description">Описание</span>'.
+                                                '<span class="description">Переговоры</span>'.
                                                 '<span class="contact">Контакты</span>'.
                                                 '<span class="LPR_name">ЛПР Имя</span>'.
                                                 '<span class="segment">Сегмент</span>'.'</li>';
@@ -105,24 +107,38 @@
                         foreach($entry[8] as $num_of_segment){
                             switch ($num_of_segment){
                                 case '1':
-                                    $segment = $segment.'<div class="ok"></div>Партнер ЭРА ';
+                                    $segment = $segment.'<div class="ok"></div>Партнер ЭРА на Карте';
                                     break;
                                 case '2':
-                                    $segment = $segment.'<div class="ok"></div>Визажист ';
+                                    $segment = $segment.'<div class="ok"></div>Визажист стилист';
                                     break;
                                 case '3':
                                     $segment = $segment.'<div class="ok"></div>Магазин офлайн ';
                                     break;
                                 case '4':
-                                    $segment = $segment.'<div class="ok"></div>ВК ';
+                                    $segment = $segment.'<div class="ok"></div>Группа ВК';
                                     break;
                                 case '5':
-                                    $segment = $segment.'<div class="ok"></div>Insta ';
+                                    $segment = $segment.'<div class="ok"></div>Insta Продажа косметики';
                                     break;
                                 case '6':
                                     $segment = $segment.'<div class="ok"></div>300 руб ';
                                     break;
-                                
+                                case '7':
+                                    $segment = $segment.'<div class="ok"></div>Сеть магазинов ';
+                                    break;
+                                case '8':
+                                    $segment = $segment.'<div class="ok"></div>Интернет магазин ';
+                                    break;
+                                case '9':
+                                    $segment = $segment.'<div class="ok"></div>Склад дистрибьютор ';
+                                    break;
+                                case '10':
+                                    $segment = $segment.'<div class="ok"></div>Потребитель ';
+                                    break;
+                                case '11':
+                                    $segment = $segment.'<div class="ok"></div>Салон красоты ';
+                                    break;
                             }
                         }
 
@@ -145,6 +161,8 @@
                 ?>
         </ul>
     </div>
+    <script src="js/script.js"></script>
     <script src="js/live_search.js"></script>
+    <script src="js/datetime.js"></script>
 </body>
 </html>
