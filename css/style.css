@@ -11,7 +11,7 @@ li {
     list-style-type: none;
 }
 ul {
-    margin-left: 0; 
+    margin-left: 370px; 
     padding-left: 0;
 }
 body {
@@ -19,6 +19,36 @@ body {
    background-attachment: fixed;
    max-width: 1920px;
    color: #fff;
+}
+.filter {
+    position: fixed;
+    left: 0;
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+.filter__segment_box {
+    float: left;
+}
+.filter__status {
+    text-align: center;
+}
+.filter__status_title {
+    margin: 5px;
+    text-align: center;
+}
+.filter__status_btn {
+    text-align: center;
+    margin: 5px auto;
+    font-weight: 700;
+    color: #333;
+    width: 130px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+.filter__segment {
+    margin-left: 10px;
 }
 button{
     -webkit-appearance: none;

@@ -23,10 +23,19 @@
             <button class="filter__status_btn">Переговоры</button>
             <button class="filter__status_btn">Работаем</button>
             <button class="filter__status_btn">Не работаем</button>
-
         </div>
         <div class="filter__segment">
-            
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>           
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>          
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>           
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Группа ВК Продажа косметики</p>
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
+        <input class="filter__segment_box" type="checkbox"> <p class="filter__segment_title">Потребитель</p>
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
+        <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
         </div>
     </div>
     <div class="content">
