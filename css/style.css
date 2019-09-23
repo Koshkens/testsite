@@ -222,5 +222,4 @@ button:focus {
 display: inline-block;
 background-color: yellow;
 border: 1px solid #f50000;
-width: 300px;
-height: 300px;}
+}
