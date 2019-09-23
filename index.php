@@ -71,7 +71,10 @@
                                 break;
                         }
                         $date = $day.$month;
+                        echo "effwfewf";
+                        
 
+                        ///fewfwfwefwf
                         $contact = '';
                         foreach($entry[6] as $temp){
                             $contact = $contact.$temp["contact"]."; "; 
