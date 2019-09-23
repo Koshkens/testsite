@@ -118,7 +118,7 @@
             <span class="date__title, titleOf">Дата</span> <input class="date__input" readonly type="date" name="date" value="<?php echo $date?>">
             <input type=hidden name="time" value="<?php echo $time ?>">
         </div>
-        <span class="status__title, titleOf">Статус</span>
+        <div class="status"><span class="status__title, titleOf">Статус</span>
             <span><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</span>
             <label for="Работаем"></label>
             <span><input type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >Переговоры</span>
