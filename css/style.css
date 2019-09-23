@@ -113,6 +113,7 @@ button:focus {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
+    width:845px;
 }
 .sample span{
     padding: 8px;
