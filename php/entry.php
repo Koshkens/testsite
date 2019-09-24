@@ -119,14 +119,22 @@
             <input type=hidden name="time" value="<?php echo $time ?>">
         </div>
         <div class="status"><span class="status__title, titleOf">Статус</span>
-            <input id="rad1" type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>
-            <label for="rad1">Работаем</label>
-            <input id="rad2" type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >
-            <label for="rad2">Переговоры</label>
-            <input id="rad3" type="radio" name="status[]" value="3" class="status__button" <?php echo $status[2]?> >
-            <label for="rad3">Холодный клиент</label>
-            <input id="rad4" type="radio" name="status[]" value="4" class="status__button" <?php echo $status[3]?> >
-            <label for="rad4">Не работаем</label></label>
+            <span>
+                <input id="rad1" type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>
+                <label for="rad1">Работаем</label>
+            </span>
+            <span>
+                <input id="rad2" type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >
+                <label for="rad2">Переговоры</label>
+            </span>
+            <span>
+                <input id="rad3" type="radio" name="status[]" value="3" class="status__button" <?php echo $status[2]?> >
+                <label for="rad3">Холодный клиент</label>
+            </span>
+            <span>
+                <input id="rad4" type="radio" name="status[]" value="4" class="status__button" <?php echo $status[3]?> >
+                <label for="rad4">Не работаем</label></label>
+            </span>
         </div>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
@@ -162,5 +170,8 @@
     </div>
     
     <script src="../js/auto_size.js"></script>
+    <script src="../js/for_misha.js"></script>
+    
+    
 </body>
 </html>

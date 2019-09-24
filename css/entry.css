@@ -44,7 +44,7 @@ input{
     font-weight: bold;
     
 }
-#rad1:checked+label{
+/* /* #rad1:checked+label{
     background-color: red;
     border: 1px solid #000000;
     color:black;
@@ -62,9 +62,14 @@ input{
 #rad4:checked+label{
     background-color: gray;
     border: 1px solid #000000;
-    color:black;
-} 
+    color:black; 
+}  */
 
+.green{
+    background-color: green;
+    border-radius: 25px;
+
+}
 .id{
     margin: 5px;
 }
