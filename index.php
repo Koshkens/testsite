@@ -132,37 +132,37 @@
                         foreach($entry[8] as $num_of_segment){
                             switch ($num_of_segment){
                                 case '1':
-                                    $segment = $segment.'<div class="ok"></div>Партнер ЭРА на Карте';
+                                    $segment = $segment.'<div class="ok segment1"></div>Партнер ЭРА на Карте';
                                     break;
                                 case '2':
-                                    $segment = $segment.'<div class="ok"></div>Визажист стилист';
+                                    $segment = $segment.'<div class="ok segment2"></div>Визажист стилист';
                                     break;
                                 case '3':
-                                    $segment = $segment.'<div class="ok"></div>Магазин офлайн ';
+                                    $segment = $segment.'<div class="ok segment3"></div>Магазин офлайн ';
                                     break;
                                 case '4':
-                                    $segment = $segment.'<div class="ok"></div>Группа ВК';
+                                    $segment = $segment.'<div class="ok segment4"></div>Группа ВК';
                                     break;
                                 case '5':
-                                    $segment = $segment.'<div class="ok"></div>Insta Продажа косметики';
+                                    $segment = $segment.'<div class="ok segment5"></div>Insta Продажа косметики';
                                     break;
                                 case '6':
-                                    $segment = $segment.'<div class="ok"></div>300 руб ';
+                                    $segment = $segment.'<div class="ok segment6"></div>300 руб ';
                                     break;
                                 case '7':
-                                    $segment = $segment.'<div class="ok"></div>Сеть магазинов ';
+                                    $segment = $segment.'<div class="ok segment7"></div>Сеть магазинов ';
                                     break;
                                 case '8':
-                                    $segment = $segment.'<div class="ok"></div>Интернет магазин ';
+                                    $segment = $segment.'<div class="ok segment8"></div>Интернет магазин ';
                                     break;
                                 case '9':
-                                    $segment = $segment.'<div class="ok"></div>Склад дистрибьютор ';
+                                    $segment = $segment.'<div class="ok segment9"></div>Склад дистрибьютор ';
                                     break;
                                 case '10':
-                                    $segment = $segment.'<div class="ok"></div>Потребитель ';
+                                    $segment = $segment.'<div class="ok segment10"></div>Потребитель ';
                                     break;
                                 case '11':
-                                    $segment = $segment.'<div class="ok"></div>Салон красоты ';
+                                    $segment = $segment.'<div class="ok segment11"></div>Салон красоты ';
                                     break;
                             }
                         }

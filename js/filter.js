@@ -1,4 +1,9 @@
+var btn1_press;
+var btn2_press;
+var btn3_press;
+var btn4_press;
 let entrys = document.getElementsByClassName('entry');
+let segments = document.getElementsByClassName('filter__segment_box');
 let btn1 = document.querySelector('#btn1');
 let btn2 = document.querySelector('#btn2');
 let btn3 = document.querySelector('#btn3');
@@ -37,10 +42,9 @@ function filter(){
             };
         });
     }
-    if(!btn1_press && !btn2_press && !btn3_press && !btn4_press) {
+    if(!btn1_press && !btn2_press && !btn3_press && !btn4_press ) {
         showEntys();
     }
-    console.log('Click');
 }
 
 function showEntys(){
@@ -55,7 +59,18 @@ function hideEntrys(){
     });
 }
 
-var btn1_press;
+Array.from(segments).forEach(function(segment){
+    segment.addEventListener("change",function(){
+        if(segment.checked){
+            Array.from(entrys).forEach(function(entry){
+                
+            });
+        }else{
+            filter()
+        }
+    });
+});
+
 btn1.addEventListener("click",function(){
     if(btn1.classList.contains('green')){
         btn1.classList.remove('green');
@@ -67,7 +82,6 @@ btn1.addEventListener("click",function(){
     filter();
 });
 
-var btn2_press;
 btn2.addEventListener("click",function(){
     if(btn2.classList.contains('yellow')){
         btn2.classList.remove('yellow');
@@ -79,7 +93,6 @@ btn2.addEventListener("click",function(){
     filter();
 });
 
-var btn3_press;
 btn3.addEventListener("click",function(){
     if(btn3.classList.contains('red')){
         btn3.classList.remove('red');
@@ -91,7 +104,6 @@ btn3.addEventListener("click",function(){
     filter();
 });
 
-var btn4_press;
 btn4.addEventListener("click",function(){
     if(btn4.classList.contains('gray')){
         btn4.classList.remove('gray');
