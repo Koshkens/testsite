@@ -44,6 +44,27 @@ input{
     font-weight: bold;
     
 }
+#rad1:checked+label{
+    background-color: red;
+    border: 1px solid #000000;
+    color:black;
+} 
+#rad2:checked+label{
+    background-color: yellow;
+    border: 1px solid #000000;
+    color:black;
+} 
+#rad3:checked+label{
+    background-color: green;
+    border: 1px solid #000000;
+    color:black;
+} 
+#rad4:checked+label{
+    background-color: gray;
+    border: 1px solid #000000;
+    color:black;
+} 
+
 .id{
     margin: 5px;
 }
