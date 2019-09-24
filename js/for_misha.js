@@ -4,26 +4,26 @@ let rad3 = document.getElementById('rad3');
 let rad4 = document.getElementById('rad4');
 
 rad1.addEventListener("change",function(){
-    rad1.classList.add('green');
-    rad2.classList.remove('yellow');
-    rad3.classList.remove('red');
-    rad4.classList.remove('gray');
+    rad1.closest('span').classList.add('green');
+    rad2.closest('span').classList.remove('yellow');
+    rad3.closest('span').classList.remove('red');
+    rad4.closest('span').classList.remove('gray');
 });
 rad2.addEventListener("change",function(){
-    rad1.classList.remove('green');
-    rad2.classList.add('yellow');
-    rad3.classList.remove('red');
-    rad4.classList.remove('gray');
+    rad1.closest('span').classList.remove('green');
+    rad2.closest('span').classList.add('yellow');
+    rad3.closest('span').classList.remove('red');
+    rad4.closest('span').classList.remove('gray');
 });
 rad3.addEventListener("change",function(){
-    rad1.classList.remove('green');
-    rad2.classList.remove('yellow');
-    rad3.classList.add('red');
+    rad1.closest('span').classList.remove('green');
+    rad2.closest('span').classList.remove('yellow');
+    rad3.closest('span').classList.add('red');
     rad4.classList.remove('gray');
 });
 rad4.addEventListener("change",function(){
-    rad1.classList.remove('green');
-    rad2.classList.remove('yellow');
-    rad3.classList.remove('red');
-    rad4.classList.add('gray');
+    rad1.closest('span').classList.remove('green');
+    rad2.closest('span').classList.remove('yellow');
+    rad3.closest('span').classList.remove('red');
+    rad4.closest('span').classList.add('gray');
 });

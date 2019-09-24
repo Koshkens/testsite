@@ -68,7 +68,22 @@ input{
 .green{
     background-color: green;
     border-radius: 25px;
-
+    padding:5px;
+}
+.yellow{
+    background-color: yellow;
+    border-radius: 25px;
+    padding:5px;
+}
+.red{
+    background-color: red;
+    border-radius: 25px;
+    padding:5px;
+}
+.gray{
+    background-color: gray;
+    border-radius: 25px;
+    padding:5px;
 }
 .id{
     margin: 5px;
