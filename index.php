@@ -39,7 +39,7 @@
             <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Салон красоты</p>
         </div>
     </div>
-    <div class="content">
+    <span class="content">
         <ul  class="elastic">
                 <?php
                     include ('php/get_catalog.php');
@@ -48,7 +48,7 @@
                                                 '<span class="title">Название</span>'.
                                                 '<span class="contact">Контакты</span>'.
                                                 '<span class="LPR_name">ЛПР Имя</span>'.
-                                                '<span class="segment">Сегмент</span>'.'</li>';
+                                                '<span class="segment_sample">Сегмент</span>'.'</li>';
                     $res =  array_reverse($res);
                     foreach($res as $entry_full){
                         $entry = $entry_full["values"];
@@ -126,43 +126,47 @@
                         $title = $entry[4];
 
                         $description = $entry[5];
-
-                        $LPR_name = $entry[7];
+                        
                         $segment = '';
+                        
+                        $LPR_name = $entry[7];
+                        if(count($entry[8])==0){
+                            $segment = '<span class="segment">Нет сегмента</<span>';
+                        }
                         foreach($entry[8] as $num_of_segment){
                             switch ($num_of_segment){
                                 case '1':
-                                    $segment = $segment.'<div class="ok segment1"></div>Партнер ЭРА на Карте';
+                                    $segment = $segment.'<span class="segment  segment1">Партнер ЭРА на Карте</span>';
                                     break;
                                 case '2':
-                                    $segment = $segment.'<div class="ok segment2"></div>Визажист стилист';
+                                    $segment = $segment.'<span class="segment  segment2">Визажист стилист</span>';
                                     break;
                                 case '3':
-                                    $segment = $segment.'<div class="ok segment3"></div>Магазин офлайн ';
+                                    $segment = $segment.'<span class="segment  segment3">Магазин офлайн</span>';
                                     break;
                                 case '4':
-                                    $segment = $segment.'<div class="ok segment4"></div>Группа ВК';
+                                    $segment = $segment.'<span class="segment  segment4">Группа ВК</span>';
                                     break;
                                 case '5':
-                                    $segment = $segment.'<div class="ok segment5"></div>Insta Продажа косметики';
+                                    $segment = $segment.'<span class="segment  segment5">Insta Продажа косметики</span>';
                                     break;
                                 case '6':
-                                    $segment = $segment.'<div class="ok segment6"></div>300 руб ';
+                                    $segment = $segment.'<span class="segment  segment6">300 руб </span>';
                                     break;
                                 case '7':
-                                    $segment = $segment.'<div class="ok segment7"></div>Сеть магазинов ';
+                                    $segment = $segment.'<span class="segment  segment7">Сеть магазинов </span>';
                                     break;
                                 case '8':
-                                    $segment = $segment.'<div class="ok segment8"></div>Интернет магазин ';
+                                    $segment = $segment.'<span class="segment  segment8">Интернет магазин </span>';
                                     break;
                                 case '9':
-                                    $segment = $segment.'<div class="ok segment9"></div>Склад дистрибьютор ';
+                                    $segment = $segment.'<span class="segment  segment9">Склад дистрибьютор </span>';
                                     break;
                                 case '10':
-                                    $segment = $segment.'<div class="ok segment10"></div>Потребитель ';
+                                    $segment = $segment.'<span class="segment  segment10">Потребитель </span>';
                                     break;
                                 case '11':
-                                    $segment = $segment.'<div class="ok segment11"></div>Салон красоты ';
+                                    $segment = $segment.'<span class="segment segment11">Салон красоты </span>';
                                     break;
                             }
                         }
@@ -171,11 +175,11 @@
                         <form target="_blank" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
                         <button class="button" name="entry" type="submit"><li class="entry '.$color.'">'.
-                                                '<span class="id">'.$entry_full["id"].'</span>'.
-                                                '<span class="title">'.$title.'</span>'.
-                                                '<span class="contact">'.$contact.'</span>'.
-                                                '<span class="LPR_name">'.$LPR_name.'</span>'.
-                                                '<span class="segment">'.$segment.'</span>'.'</li></button></form>';
+                                                '<span class="id entry_element">'.$entry_full["id"].'</span>'.
+                                                '<span class="title entry_element">'.$title.'</span>'.
+                                                '<span class="contact entry_element">'.$contact.'</span>'.
+                                                '<span class="LPR_name entry_element">'.$LPR_name.'</span>'.
+                                                '<span class="segment_span entry_element">'.$segment.'</span>'.'</li></button></form>';
                         
                                                 
                                                 

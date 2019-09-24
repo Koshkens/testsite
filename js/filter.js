@@ -2,12 +2,24 @@ var btn1_press;
 var btn2_press;
 var btn3_press;
 var btn4_press;
+var search_segments = Array();
+var segments_class = ['segment1','segment2','segment3','segment4','segment5','segment6','segment7','segment8','segment9','segment10','segment11'];
 var entrys = document.getElementsByClassName('entry');
-var segments = document.getElementsByClassName('filter__segment_box');
+var segments_box = document.getElementsByClassName('filter__segment_box');
+var segments = document.getElementsByClassName('segment_span');
 var btn1 = document.querySelector('#btn1');
 var btn2 = document.querySelector('#btn2');
 var btn3 = document.querySelector('#btn3');
 var btn4 = document.querySelector('#btn4');
+function filter_entry(){
+    var filter_entry = Array();
+    Array.from(entrys).forEach(function(entry){
+        if(!(entry.closest(".button").classList.contains('hide'))){
+            filter_entry.push(entry);
+        }
+    });
+    return filter_entry;
+}
 
 function filter(){
     hideEntrys();
@@ -59,17 +71,49 @@ function hideEntrys(){
     });
 }
 
-Array.from(segments).forEach(function(segment){
+Array.from(segments_box).forEach(function(segment,i){
     segment.addEventListener("change",function(){
-        if(segment.checked){
-            Array.from(entrys).forEach(function(entry){
         
-            });
+        if(search_segments.indexOf(segments_class[i])==-1){
+            search_segments = search_segments.concat(segments_class[i]);
         }else{
-            filter();
+            search_segments = search_segments.filter(segment => segment !== segments_class[i]);
         }
+        filter_segment();
     });
 });
+
+function filter_segment(){
+    console.log(search_segments);
+    if(search_segments.length==0){
+       showEntys();
+    }else{
+        hideEntrys();
+        Array.from(segments).forEach(function(segment){
+                var l = 0;
+                Array.from(segment.children).forEach(function(segment_elem){
+                    search_segments.forEach(function(search_segment){
+                        if(segment_elem.classList.contains(search_segment)){
+                            l++;
+                        }
+                    });
+                });
+                if(l==(search_segments.length)){
+                    segment.closest(".button").classList.remove('hide');
+                }
+                // var l = 0;
+                // search_segments.forEach(function(search_segment){
+                //     if(segment.classList.contains(search_segment)){
+                //         l++;
+                //     }
+                // });
+                // if(l>=search_segments.length){
+                //     segment.closest(".button").classList.remove('hide');
+                //     console.log("d");
+                // }
+        });
+    }
+}
 
 btn1.addEventListener("click",function(){
     if(btn1.classList.contains('green')){

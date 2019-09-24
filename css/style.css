@@ -159,7 +159,7 @@ button:focus {
     text-align: center;
     color: #fff;
 }
-.entry span{
+.entry_element{
     padding: 8px;
     margin-right: 5px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -176,11 +176,16 @@ button:focus {
 .hide{
     display: none;
 }
-
+.elastic{
+    margin-top: 70px;
+}
 .elastic li.hide {
     display: none;
 }
-.title, .contact, .LPR_name, .segment{
+.segment_sample{
+    width:180px;
+}
+.title, .contact, .LPR_name, .segment_span{
     width:180px;
 }
 .description{
