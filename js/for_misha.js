@@ -19,7 +19,7 @@ rad3.addEventListener("change",function(){
     rad1.closest('span').classList.remove('green');
     rad2.closest('span').classList.remove('yellow');
     rad3.closest('span').classList.add('red');
-    rad4.classList.remove('gray');
+    rad4.closest('span').classList.remove('gray');
 });
 rad4.addEventListener("change",function(){
     rad1.closest('span').classList.remove('green');
