@@ -2,12 +2,12 @@ var btn1_press;
 var btn2_press;
 var btn3_press;
 var btn4_press;
-let entrys = document.getElementsByClassName('entry');
-let segments = document.getElementsByClassName('filter__segment_box');
-let btn1 = document.querySelector('#btn1');
-let btn2 = document.querySelector('#btn2');
-let btn3 = document.querySelector('#btn3');
-let btn4 = document.querySelector('#btn4');
+var entrys = document.getElementsByClassName('entry');
+var segments = document.getElementsByClassName('filter__segment_box');
+var btn1 = document.querySelector('#btn1');
+var btn2 = document.querySelector('#btn2');
+var btn3 = document.querySelector('#btn3');
+var btn4 = document.querySelector('#btn4');
 
 function filter(){
     hideEntrys();
@@ -15,7 +15,7 @@ function filter(){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('green')){
                 entry.closest(".button").classList.remove('hide');
-            };
+            }
         });
     }
 
@@ -23,7 +23,7 @@ function filter(){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('yellow')){
                 entry.closest(".button").classList.remove('hide');
-            };
+            }
         });
     }
 
@@ -31,7 +31,7 @@ function filter(){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('red')){
                 entry.closest(".button").classList.remove('hide');
-            };
+            }
         });
     }
 
@@ -39,7 +39,7 @@ function filter(){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('gray')){
                 entry.closest(".button").classList.remove('hide');
-            };
+            }
         });
     }
     if(!btn1_press && !btn2_press && !btn3_press && !btn4_press ) {
@@ -63,10 +63,10 @@ Array.from(segments).forEach(function(segment){
     segment.addEventListener("change",function(){
         if(segment.checked){
             Array.from(entrys).forEach(function(entry){
-                
+        
             });
         }else{
-            filter()
+            filter();
         }
     });
 });

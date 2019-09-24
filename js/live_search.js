@@ -1,6 +1,6 @@
 document.querySelector('#elastic').oninput = function () {
-    let val = this.value.trim();
-    let elasticItems = document.getElementsByName("entry");
+    var val = this.value.trim();
+    var elasticItems = document.getElementsByName("entry");
     val = val.toLowerCase();
     if (val != '') {
         elasticItems.forEach(function (elem) {
@@ -21,7 +21,7 @@ document.querySelector('#elastic').oninput = function () {
             //elem.innerHTML = elem.innerText;
          });
    }
-}
+};
 
 // function insertMark(string, pos, len) {
 //     // hello world

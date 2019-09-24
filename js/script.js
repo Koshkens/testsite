@@ -1,5 +1,5 @@
 function entry_amount_function(){
-    let entrys = document.getElementsByClassName('entry');
+    var entrys = document.getElementsByClassName('entry');
     entry_amount = document.getElementById('entry_amount');
     entry_amount.innerHTML = "Кол-во записей: "+ entrys.length;
 }

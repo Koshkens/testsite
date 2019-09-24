@@ -1,5 +1,5 @@
 function Timer() {
-    var dt=new Date()
+    var dt=new Date();
     var month;
     switch (dt.getMonth()){
         case 0:
