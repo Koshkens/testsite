@@ -27,3 +27,16 @@ rad4.addEventListener("change",function(){
     rad3.closest('span').classList.remove('red');
     rad4.closest('span').classList.add('gray');
 });
+
+if(rad1.checked){
+    rad1.closest('span').classList.add('green');
+}
+if(rad2.checked){
+    rad2.closest('span').classList.add('yellow');
+}
+if(rad3.checked){
+    rad3.closest('span').classList.add('red');
+}
+if(rad4.checked){
+    rad4.closest('span').classList.add('gray');
+}
