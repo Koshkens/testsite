@@ -173,14 +173,14 @@ button:focus {
     font-weight: bold;
 }
 
-.hide{
+.hide1{
+    display: none;
+}
+.hide2{
     display: none;
 }
 .elastic{
     margin-top: 70px;
-}
-.elastic li.hide {
-    display: none;
 }
 .segment_sample{
     width:180px;

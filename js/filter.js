@@ -14,7 +14,7 @@ var btn4 = document.querySelector('#btn4');
 function filter_entry(){
     var filter_entry = Array();
     Array.from(entrys).forEach(function(entry){
-        if(!(entry.closest(".button").classList.contains('hide'))){
+        if(!(entry.closest(".button").classList.contains('hide1'))){
             filter_entry.push(entry);
         }
     });
@@ -22,11 +22,11 @@ function filter_entry(){
 }
 
 function filter(){
-    hideEntrys();
+    hide1Entrys();
     if(btn1_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('green')){
-                entry.closest(".button").classList.remove('hide');
+                entry.closest(".button").classList.remove('hide1');
             }
         });
     }
@@ -34,7 +34,7 @@ function filter(){
     if(btn2_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('yellow')){
-                entry.closest(".button").classList.remove('hide');
+                entry.closest(".button").classList.remove('hide1');
             }
         });
     }
@@ -42,7 +42,7 @@ function filter(){
     if(btn3_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('red')){
-                entry.closest(".button").classList.remove('hide');
+                entry.closest(".button").classList.remove('hide1');
             }
         });
     }
@@ -50,24 +50,36 @@ function filter(){
     if(btn4_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('gray')){
-                entry.closest(".button").classList.remove('hide');
+                entry.closest(".button").classList.remove('hide1');
             }
         });
     }
     if(!btn1_press && !btn2_press && !btn3_press && !btn4_press ) {
-        showEntys();
+        show1Entys();
     }
 }
 
-function showEntys(){
+function show1Entys(){
     Array.from(entrys).forEach(function(entry){
-        entry.closest(".button").classList.remove('hide');
+        entry.closest(".button").classList.remove('hide1');
     });
 }
 
-function hideEntrys(){
+function hide1Entrys(){
     Array.from(entrys).forEach(function(entry){
-        entry.closest(".button").classList.add('hide');
+        entry.closest(".button").classList.add('hide1');
+    });
+}
+
+function show2Entys(){
+    Array.from(entrys).forEach(function(entry){
+        entry.closest(".button").classList.remove('hide2');
+    });
+}
+
+function hide2Entrys(){
+    Array.from(entrys).forEach(function(entry){
+        entry.closest(".button").classList.add('hide2');
     });
 }
 
@@ -86,9 +98,9 @@ Array.from(segments_box).forEach(function(segment,i){
 function filter_segment(){
     console.log(search_segments);
     if(search_segments.length==0){
-       showEntys();
+       show2Entys();
     }else{
-        hideEntrys();
+        hide2Entrys();
         Array.from(segments).forEach(function(segment){
                 var l = 0;
                 Array.from(segment.children).forEach(function(segment_elem){
@@ -99,18 +111,8 @@ function filter_segment(){
                     });
                 });
                 if(l==(search_segments.length)){
-                    segment.closest(".button").classList.remove('hide');
+                    segment.closest(".button").classList.remove('hide2');
                 }
-                // var l = 0;
-                // search_segments.forEach(function(search_segment){
-                //     if(segment.classList.contains(search_segment)){
-                //         l++;
-                //     }
-                // });
-                // if(l>=search_segments.length){
-                //     segment.closest(".button").classList.remove('hide');
-                //     console.log("d");
-                // }
         });
     }
 }
