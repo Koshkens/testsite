@@ -168,8 +168,41 @@ input{
     margin-bottom: 10px;
     margin-right:10px; 
 }
+.status__button1, .status__button2, .status__button3, .status__button4{
+   display: none;
+}
+.status__label{
+    display: inline-block;
+    text-align: center;
+    padding: 3px;
+    padding-top:8px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    width: 135px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.status__button1:checked + .status__label{
+    background-color:rgba(0, 128, 0, 0.5);
+}
+.status__button2:checked + .status__label{
+    background-color:rgba(255, 255, 0, 0.5);
+}
+.status__button3:checked + .status__label{
+    background-color:rgba(255, 0, 0, 0.5);
+}
+.status__button4:checked + .status__label{
+    background-color:rgba(128, 128, 128, 0.5);
+}
 .segment_checkbox{
-    margin-bottom: 10px;
+    display: none;
+}
+.segment_label{
+    color: rgba(255, 255, 255, 0.37);
+}
+.segment_checkbox:checked + .segment_label{
+    color: rgba(255, 255, 255, 0.829);
 }
 
 

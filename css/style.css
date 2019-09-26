@@ -179,6 +179,9 @@ button:focus {
 .hide2{
     display: none;
 }
+.hide{
+    display: none; 
+}
 .elastic{
     margin-top: 70px;
 }
