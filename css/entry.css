@@ -47,9 +47,7 @@ input{
 .id{
     margin: 5px;
 }
-.date {
-    margin-top: 50px;
-}
+
 .date__input {
     background-color: rgba(0, 0, 0, 0);
     outline: none;
@@ -74,32 +72,28 @@ input{
     text-align: center;
 }
 
-.date, .status, .title, .description, .contact, .LPR_name, .segment{
-    margin: 15px;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 25px;
-}
-
-.submit__btn {
-    margin-left: 15px;
+.save__btn, .sms__btn {
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
     width: 100px;
     height: 35px;
     text-decoration: none;
     text-transform: uppercase;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     outline: none;
-    background-color: rgb(98, 208, 228);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
 }
  .contact_text {
     width: 35%;
     height: 30px;
     outline: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 5px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     resize: none;
     overflow-y: auto;
     font-family: Arial;
@@ -110,11 +104,10 @@ input{
     margin-bottom: 10px; 
 }
 
-.LPR_name__text, .description__text, .title__text {
-    width: 70%;
-    min-height: 120px;
+.LPR_name__text, .title__text{
+    width: 100%;
     outline: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
     padding: 8px;
     border: none;
     border-radius: 20px;
@@ -125,5 +118,58 @@ input{
     font-weight: 400;
     color: rgba(255, 255, 255, 0.829);
     max-height: 400px;
+    overflow: auto;
 }
+.talk__text, .description__text, .sms__text{
+    width: 100%;    
+    min-height: 120px;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    resize: none;
+    overflow-y: auto;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.829);
+    max-height: 400px;
+    overflow: auto;
+}
+.entry{
+    width:100%;
+}
+.block{
+	vertical-align:top;
+    display: inline-block;
+    min-height:705px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+}
+.documents{
+    margin-top: 50px;
+}
+.link_on_doc{
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    margin:10px;
+}
+
+.left, .rigth, .center{
+    width: 25%;
+}
+.function{
+    width:15%;
+}
+.status, .talk{
+    margin-bottom: 10px;
+    margin-right:10px; 
+}
+.segment_checkbox{
+    margin-bottom: 10px;
+}
+
 

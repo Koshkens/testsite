@@ -26,17 +26,17 @@
         </div>
         <div class="filter__segment">
             <h3 class="filter__segment_title">Сегмент</h3>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Партнер ЭРА на Карте</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Визажист стилист</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Магазин офлайн</p>           
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Группа ВК</p>          
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Insta Продажа косметики</p>           
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">300 руб</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Сеть магазинов</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Интернет магазин</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Склад дистрибьютор</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p>
-            <input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Салон красоты</p>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Партнер ЭРА на Карте</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Визажист стилист</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Магазин офлайн</p></label>           
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Группа ВК</p></label>          
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Insta Продажа косметики</p></label>           
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">300 руб</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Сеть магазинов</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Интернет магазин</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Склад дистрибьютор</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Салон красоты</p></label>
         </div>
     </div>
     <span class="content">

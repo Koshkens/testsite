@@ -63,7 +63,7 @@
         }
         $title = $entry[4];
 
-        $description = $entry[5];
+        $talk = $entry[5];
 
         $LPR_name = $entry[7];
         $segment = array_fill(0,11,'');
@@ -107,7 +107,7 @@
         }
        
     ?>
-    <div class="entry">
+    <!-- <div class="entry">
         <form method='post' action="./entry.php">
         <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
         <div class="battons">
@@ -130,7 +130,7 @@
         </div>
         <div class="segment">
             <span class="segment__title, titleOf">Сегмент</span>
-            <span><input type="checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА на Карте
+            <div><input type="checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА на Карте
             <span><input type="checkbox" name="segment[]" value="2"<?php echo $segment[1] ?>>Визажист Стилист</span>
             <span><input type="checkbox" name="segment[]" value="3"<?php echo $segment[2] ?>>Магазин офлайн</span>
             <span><input type="checkbox" name="segment[]" value="4"<?php echo $segment[3] ?>>Группа ВК Продажа Косметики</span>
@@ -148,7 +148,7 @@
         </div>
         <div class="description">
             <span class="description__title, titleOf">Переговоры</span>
-            <textarea class="description__text" name="description"  type="text"><?php echo $description?></textarea>
+            <textarea class="description__text" name="description"  type="text"><?php echo $talk?></textarea>
         </div>
         <div class="LPR_name">
             <span class="LPR_name__title, titleOf">ЛПР Имя</span>
@@ -159,8 +159,78 @@
             <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" placeholder="Новый контакт">
         </div>
         </form>
+    </div> -->
+    <div class="entry">
+        <form method='post' action="./entry.php">
+        <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
+            <div class="block left">
+                <div class="status">
+                    <p>Статус:</p>
+                    <label><div><input type="radio" name="status[]" value="1" class="status__button" checked <?php echo $status[0]?>>Работаем</div></label>
+                    <label><div><input type="radio" name="status[]" value="2" class="status__button" <?php echo $status[1]?> >Переговоры</div></label>
+                    <label><div><input type="radio" name="status[]" value="3" class="status__button" <?php echo $status[2]?> >Холодный клиент</div></label>
+                <label> <div><input type="radio" name="status[]" value="4" class="status__button" <?php echo $status[3]?> >Не работаем</div></label>
+                </div>
+                <div class="talk">
+                    <p>Переговоры:</p>
+                    <textarea class="auto_size talk__text" name="talk"  type="text"></textarea>
+                </div>
+            </div>
+            <div class="block center">
+                <div class="date"> 
+                    <p>Дата:</p>
+                    <input class="date__input" readonly type="date" name="date" value="<?php echo $date?>">
+                    <input type=hidden name="time" value="<?php echo $time ?>">
+                </div> 
+                <div class="LPR">
+                    <p>LPR Имя:</p>
+                    <input type="text"  class="LPR_name__text" name="LPR_name" value="<?php echo $LPR_name?>">
+                </div>
+                <div class="contact">
+                    <p>Контакты:</p>
+                    <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" placeholder="Новый контакт">
+                </div>
+                <div class="segments">
+                    <p>Сегмент:</p>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="1" <?php echo $segment[0] ?>>Партнер ЭРА на Карте</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="2"<?php echo $segment[1] ?>>Визажист Стилист</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="3"<?php echo $segment[2] ?>>Магазин офлайн</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="4"<?php echo $segment[3] ?>>Группа ВК Продажа Косметики</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="5"<?php echo $segment[4] ?>>Insta Продажа Косметики</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="6"<?php echo $segment[5] ?>>Аренда рабочего места - 300 руб</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="7"<?php echo $segment[6] ?>>Сеть магазинов <br></div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="8"<?php echo $segment[7] ?>>Интернет магазин</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="9"<?php echo $segment[8] ?>>Склад-Дистрибьютор</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="10"<?php echo $segment[9] ?>>Потребитель</div>
+                    <div><input type="checkbox" class="segment_checkbox" name="segment[]" value="11"<?php echo $segment[10] ?>>Салон красоты</div>
+                </div> 
+            </div>
+            <div class="block rigth">
+                <div class="title">
+                    <p>Название:</p>
+                    <input type="text"  class="title__text" name="title" value="<?php echo $title?>">
+                </div>
+                <div class="description">
+                    <p>Описание:</p>
+                    <textarea class="auto_size description__text" name="description"  type="text"><?php echo $talk?></textarea>
+                </div>
+            </div>
+            <div class="block function">
+                <input class="save__btn" type="submit" id="save" value="Сохранить">
+                <div class="sms">
+                    <textarea class="auto_size sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
+                    <button class="sms__btn" id="sms_btn">SMS</button>
+                </div>
+                <div class="documents">
+                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_1.php','Документ 1','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 1</button>
+                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_2.php','Документ 2','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 2</button>
+                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_3.php','Документ 3','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 3</button>
+                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_4.php','Документ 4','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 4</button>
+                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_5.php','Документ 5','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 5</button>
+                </div>
+            </div>
+        </form>
     </div>
-    
     <script src="../js/auto_size.js"></script>
 </body>
 </html>
