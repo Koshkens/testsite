@@ -136,6 +136,7 @@ button:focus {
     border-radius: 25px;
     transition: .5s;
     color: #fff;
+    width: 845px;
 }
 .sample{
     margin: 5px;
