@@ -36,6 +36,9 @@ body {
 .filter__status_title, .filter__segment_title {
     margin: 5px;
 }
+.filter__segment_title{
+    cursor: pointer;
+}
 .filter__status_btn {
     margin: 5px auto;
     padding: 3px;
@@ -45,6 +48,7 @@ body {
     height: 30px;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
 }
 .filter__segment, .filter__status {
     margin-left: 10px;
@@ -137,6 +141,7 @@ button:focus {
     transition: .5s;
     color: #fff;
     width: 845px;
+    cursor: pointer;
 }
 .sample{
     margin: 5px;

@@ -36,7 +36,8 @@
             $entry_id = $_POST['entry_id'];
             include ('./add_entry.php');
             echo '
-                <span class="added">Запись добавлена!</span>    
+                <span class="added">Запись добавлена!</span>
+                <input type="button" onclick="history.go(-2);" class="back__btn" value="Назад"/>    
             ';
         }else{
     // $date = date('Y-m-d');
@@ -110,7 +111,7 @@
                     </div>
                     <div class="talk">
                         <p>Переговоры:</p>
-                        <textarea class="auto_size talk__text" name="talk"  type="text" placeholder="Переговоры с клиентом"></textarea>
+                        <textarea rows="20" class="auto_size talk__text" name="talk"  type="text" placeholder="Переговоры с клиентом"></textarea>
                     </div>
                 </div>
                 <div class="block center">
@@ -147,7 +148,7 @@
                         <label for="segment8" class="segment_label">8 Интернет магазин</label><br>
                         <input type="checkbox"class="segment_checkbox"  id="segment9" name="segment[]" value="9">
                         <label for="segment9" class="segment_label">9 Склад-Дистрибьютор</label><br>
-                        <input type="checkbox"class="segment_checkbox"  id="segment10" name="segment[]" value="10">
+                        <input type="checkbox"class="segment_checkbox"  id="segment10" name="segment[]" value="10" checked>
                         <label for="segment10" class="segment_label">10 Потребитель</label><br>
                         <input type="checkbox"class="segment_checkbox"  id="segment11" name="segment[]" value="11">
                         <label for="segment11" class="segment_label">11 Салон красоты</label><br>
@@ -160,11 +161,12 @@
                     </div>
                     <div class="description">
                         <p>Описание:</p>
-                        <textarea class="auto_size description__text" name="description"  type="text" placeholder="Описание"></textarea>
+                        <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"></textarea>
                     </div>
                 </div>
                 <div class="block function">
                     <input class="save__btn" type="submit" id="save" value="Сохранить">
+                    <input type="button" onclick="history.back();" class="back__btn" value="Назад"/>
                 </div"
             </form>
         </div>

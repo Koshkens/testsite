@@ -124,7 +124,7 @@
                 </div>
                 <div class="talk">
                     <p>Переговоры:</p>
-                    <textarea class="auto_size talk__text" name="talk"  type="text" placeholder="Переговоры с клиентом"></textarea>
+                    <textarea rows="20" class="auto_size talk__text" name="talk"  type="text" placeholder="Переговоры с клиентом"></textarea>
                 </div>
             </div>
             <div class="block center">
@@ -174,13 +174,14 @@
                 </div>
                 <div class="description">
                     <p>Описание:</p>
-                    <textarea class="auto_size description__text" name="description"  type="text" placeholder="Описание"><?php echo $talk?></textarea>
+                    <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"><?php echo $talk?></textarea>
                 </div>
             </div>
             <div class="block function">
                 <input class="save__btn" type="submit" id="save" value="Сохранить">
+                <input type="button" onclick="history.back();" class="back__btn" value="Назад"/>
                 <div class="sms">
-                    <textarea class="auto_size sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
+                    <textarea rows="20" class="auto_size sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
                     <button class="sms__btn" id="sms_btn">SMS</button>
                 </div>
                 <div class="documents">
@@ -193,6 +194,5 @@
             </div>
         </form>
     </div>
-    <script src="../js/auto_size.js"></script>
 </body>
 </html>

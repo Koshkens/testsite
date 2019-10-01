@@ -63,7 +63,7 @@ input{
     width: 80px;
     padding: 9px;
     margin-bottom: 8px;
-    border-radius: 25px;
+    border-radius: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -72,7 +72,7 @@ input{
     text-align: center;
 }
 
-.save__btn, .sms__btn {
+.save__btn, .sms__btn, .back__btn{
     margin-left: auto;
     margin-right: auto;
     color: #fff;
@@ -83,8 +83,9 @@ input{
     border: none;
     border-radius: 10px;
     outline: none;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     font-weight: bold;
+    cursor: pointer;
 }
  .contact_text {
     width: 35%;
@@ -105,12 +106,12 @@ input{
 }
 
 .LPR_name__text, .title__text{
-    width: 100%;
+    width: 95%;
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     padding: 8px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     resize: none;
     overflow-y: auto;
     font-family: Arial;
@@ -121,13 +122,13 @@ input{
     overflow: auto;
 }
 .talk__text, .description__text, .sms__text{
-    width: 100%;    
+    width: 95%;    
     min-height: 120px;
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     padding: 8px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     resize: none;
     overflow-y: auto;
     font-family: Arial;
@@ -157,6 +158,10 @@ input{
     font-weight: bold;
     margin:10px;
 }
+input[type="text"], textarea[type="text"]{
+    background-color: rgba(166, 172, 179, 0.151);
+
+}
 
 .left, .rigth, .center{
     width: 25%;
@@ -180,8 +185,12 @@ input{
     margin-bottom: 5px;
     width: 135px;
     height: 30px;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.sms__text{
+    margin-top:10px;
+    margin-bottom:10px;
 }
 .status__button1:checked + .status__label{
     background-color:rgba(0, 128, 0, 0.5);
@@ -200,6 +209,7 @@ input{
 }
 .segment_label{
     color: rgba(255, 255, 255, 0.37);
+    cursor: pointer;
 }
 .segment_checkbox:checked + .segment_label{
     color: rgba(255, 255, 255, 0.829);
