@@ -20,6 +20,31 @@ body {
    max-width: 1920px;
    color: #fff;
 }
+::-webkit-scrollbar-track {
+    background-color:rgba(166, 172, 179, 0);
+}   
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    background-color:rgb(91, 102, 93);
+}
+ 
+::-webkit-scrollbar-thumb:hover{
+    background-color:rgb(91, 102, 93);
+}
+    
+::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px
+}  
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar:hover{
+    width: 15px;
+}  
 .filter {
     position: fixed;
     left: 0;
