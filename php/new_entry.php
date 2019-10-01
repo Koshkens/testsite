@@ -94,7 +94,7 @@
     // <script src="../js/auto_size.js"></script>';}
     $date = date('Y-m-d');
     echo '<div class="entry">
-            <form method="post" action="./entry.php">
+            <form method="post" action="./new_entry.php">
             <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
                 <div class="block left">
                     <div class="status">
@@ -102,7 +102,7 @@
                         <label><input type="radio" name="status[]" value="1" class="status__button1" checked>
                         <span  class="status__label">Работаем</span></label>
                         <label><input type="radio" name="status[]" value="2" class="status__button2">
-                        <span  class="status__label">Переговоры</span></label>
+                        <span  class="status__label">Переговоры</span></label><br>
                         <label><input type="radio" name="status[]" value="3" class="status__button3">
                         <span  class="status__label">Холодный клиент</span></label>
                         <label><input type="radio" name="status[]" value="4" class="status__button4">

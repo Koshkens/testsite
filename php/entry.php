@@ -116,7 +116,7 @@
                     <label><input type="radio" name="status[]" value="1" class="status__button1" checked <?php echo $status[0]?>>
                     <span  class="status__label">Работаем</span></label>
                     <label><input type="radio" name="status[]" value="2" class="status__button2" <?php echo $status[1]?> >
-                    <span  class="status__label">Переговоры</span></label>
+                    <span  class="status__label">Переговоры</span></label><br>
                     <label><input type="radio" name="status[]" value="3" class="status__button3" <?php echo $status[2]?> >
                     <span  class="status__label">Холодный клиент</span></label>
                     <label><input type="radio" name="status[]" value="4" class="status__button4" <?php echo $status[3]?> >

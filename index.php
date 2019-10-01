@@ -20,7 +20,7 @@
         <div class="filter__status">
             <h3 class="filter__status_title">Статус</h3>
             <button class="filter__status_btn" id="btn1">Работаем</button>
-            <button class="filter__status_btn" id="btn2">Переговоры</button>
+            <button class="filter__status_btn" id="btn2">Переговоры</button><br>
             <button class="filter__status_btn" id="btn3">Холодный клиент</button>
             <button class="filter__status_btn" id="btn4">Не работаем</button>
         </div>
