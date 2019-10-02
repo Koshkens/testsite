@@ -29,12 +29,12 @@
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Партнер ЭРА на Карте</p></label>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Визажист стилист</p></label>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Магазин офлайн</p></label>           
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Группа ВК</p></label>          
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Группа ВК Продажа косметики</p></label>          
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Insta Продажа косметики</p></label>           
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">300 руб</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Аренда рабочего места - 300 руб</p></label>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Сеть магазинов</p></label>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Интернет магазин</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Склад дистрибьютор</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Склад-дистрибьютор</p></label>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p></label>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Салон красоты</p></label>
         </div>
