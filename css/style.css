@@ -165,7 +165,7 @@ button:focus {
     border-radius: 25px;
     transition: .5s;
     color: #fff;
-    width: 845px;
+    width: 850px;
     cursor: pointer;
 }
 .sample{
@@ -173,7 +173,7 @@ button:focus {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
-    width:845px;
+    width:850px;
     
 }
 .sample span{
@@ -226,7 +226,7 @@ button:focus {
     width:200px;
 }
 .id{
-    width: 20px;
+    width: 25px;
 }
 .date{
     width: 60px;
