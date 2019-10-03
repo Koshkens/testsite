@@ -121,16 +121,16 @@ button:focus {
     outline: none;
 }
 .nav {
+    display: inline-block;
     top: 0;
     left: 0;
     position: fixed;
     width: 100%;
-    height: 50px;
     background-color: rgba(0, 0, 0, 0.7);
 }
 .nav_input {
     margin: 10px auto;
-    margin-left: 30px;
+    margin-left: 15px;
     padding-left: 10px;
     width: 240px;
     height: 30px;
@@ -148,7 +148,8 @@ button:focus {
     transition: .5s;
 }
 .new_element, .stat {
-    margin-left: 10px;
+    margin: auto;
+    margin-right: 5px;
     text-decoration: none;
     color: rgb(0, 0, 0);;
     background-color:#fff;
@@ -156,18 +157,32 @@ button:focus {
     border-radius: 25px;
     font-size: 16px;
 }
+.search_aum, .datatime_title{
+    display: inline-block;
+}
+.datatime_title{
+    margin-left: 15px;
+}
+.nav_btn{
+    float: right;
+    text-align: center;
+    display: flex;
+    height: 80px;
+}
 .entry_amount{
-    margin-left: 5px; 
+    margin-top:5px;
+    margin-left: 15px;
+    padding-left: 10px;
 }
 .datetime{
-    position: fixed;
+    /* position: fixed;
     margin: 15px;
     right: 0;
-    font-size: 20px;
+    font-size: 20px; */
 }
 .content {
     margin: 25px auto;
-    margin-top: 70px;
+    margin-top: 100px;
     min-width: 1400px;
     max-width: 1920px;
 }
@@ -227,7 +242,7 @@ button:focus {
     display: none; 
 }
 .elastic{
-    margin-top: 70px;
+    margin-top: 100px;
 }
 .segment_sample{
     width:180px;

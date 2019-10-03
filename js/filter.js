@@ -3,7 +3,7 @@ var btn2_press;
 var btn3_press;
 var btn4_press;
 var search_segments = Array();
-var segments_class = ['segment1','segment2','segment3','segment4','segment5','segment6','segment7','segment8','segment9','segment10','segment11'];
+var segments_class = ['segment10','segment2','segment11','segment3','segment7','segment9','segment8','segment4','segment5','segment1','segment6'];
 var entrys = document.getElementsByClassName('entry');
 var segments_box = document.getElementsByClassName('filter__segment_box');
 var segments = document.getElementsByClassName('segment_span');

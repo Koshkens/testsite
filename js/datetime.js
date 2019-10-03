@@ -3,43 +3,43 @@ function Timer() {
     var month;
     switch (dt.getMonth()){
         case 0:
-            month = ' Янв.';
+            month = ' Января';
             break;
         case 1:
-            month = ' Фев.';
+            month = ' Февраля';
             break;
         case 2:
-            month = ' Март';
+            month = ' Марта';
             break;
         case 3:
-            month = ' Апр.';
+            month = ' Апреля';
             break;
         case 4:
-            month = ' Май';
+            month = ' Мая';
             break;
         case 5:
-            month = ' Июнь';
+            month = ' Июня';
             break;
         case 6:
-            month = ' Июль';
+            month = ' Июля';
             break;
         case 7:
-            month = ' Авг.';
+            month = ' Августа';
             break;
         case 8:
-            month = ' Сент.';
+            month = ' Сентября';
             break;
         case 9:
-            month = ' Окт.';
+            month = ' Октября';
             break;
         case 10:
-            month = ' Нояб.';
+            month = ' Ноября';
             break;
         case 11:
-            month = ' Дек.';
+            month = ' Декабря';
             break;
     }
-    document.getElementById('datetime').innerHTML=dt.getDate()+" "+month+"  "+dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+    document.getElementById('datetime').innerHTML=dt.getDate()+" "+month+"<br>"+dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
     setTimeout("Timer()",1000);
  }
  Timer();

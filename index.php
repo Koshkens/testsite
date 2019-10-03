@@ -9,13 +9,24 @@
     <title>Панель</title>
 </head>
 <body>
-    <span class="nav">
-            <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input">
+    <div class="nav">
+        <div class="search_aum">
+            <div class="entry_amount" id="entry_amount"></div> 
+            <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input"> 
+        </div>
+        <div class="datatime_title">
+            <span id="datetime" class="datetime"></span>
+        </div>
+        <div class="nav_btn">
             <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
             <a class="stat" href="./php/stat.php" target="_blank">Статистика</a>
-            <span class="entry_amount" id="entry_amount"></span>
-            <span id="datetime" class="datetime"></span>
-    </span>
+        </div>
+        <!-- <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input">
+        <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
+        <a class="stat" href="./php/stat.php" target="_blank">Статистика</a>
+        <span class="entry_amount" id="entry_amount"></span>
+        <span id="datetime" class="datetime"></span> -->
+    </div>
     <div class="filter">
         <div class="filter__status">
             <h3 class="filter__status_title">Статус</h3>
@@ -26,17 +37,17 @@
         </div>
         <div class="filter__segment">
             <h3 class="filter__segment_title">Сегмент</h3>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Партнер ЭРА на Карте</p></label>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title ptr">Потребитель</p></label><br>
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Визажист стилист</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Магазин офлайн</p></label>           
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Салон красоты / Школа</p></label><br>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Магазин офлайн</p></label>     
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Сеть магазинов</p></label> 
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Склад-дистрибьютор</p></label><br>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Интернет магазин</p></label>  
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Группа ВК Продажа косметики</p></label>          
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Insta Продажа косметики</p></label>           
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Insta Продажа косметики</p></label><br>
+            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Партнер ЭРА на Карте</p></label><br>             
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Аренда рабочего места - 300 руб</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Сеть магазинов</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Интернет магазин</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Склад-дистрибьютор</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Потребитель</p></label>
-            <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Салон красоты</p></label>
         </div>
     </div>
     <span class="content">
@@ -45,10 +56,10 @@
                     include ('php/get_catalog.php');
                     echo '<li class="sample">'.
                                                 '<span class="id">ID</span>'.
+                                                '<span class="segment_sample">Сегмент</span>'.
                                                 '<span class="title">Название</span>'.
-                                                '<span class="contact">Контакты</span>'.
                                                 '<span class="LPR_name">ЛПР Имя</span>'.
-                                                '<span class="segment_sample">Сегмент</span>'.'</li>';
+                                                '<span class="contact">Контакты</span>'.'</li>';
                     $res =  array_reverse($res);
                     foreach($res as $entry_full){
                         $entry = $entry_full["values"];
@@ -176,10 +187,11 @@
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
                         <button class="button" name="entry" type="submit"><li class="entry '.$color.'">'.
                                                 '<span class="id entry_element">'.$entry_full["id"].'</span>'.
+                                                '<span class="segment_span entry_element">'.$segment.'</span>'.
                                                 '<span class="title entry_element">'.$title.'</span>'.
-                                                '<span class="contact entry_element">'.$contact.'</span>'.
                                                 '<span class="LPR_name entry_element">'.$LPR_name.'</span>'.
-                                                '<span class="segment_span entry_element">'.$segment.'</span>'.'</li></button></form>';
+                                                '<span class="contact entry_element">'.$contact.'</span>'.
+                                                '</li></button></form>';
                         
                                                 
                                                 

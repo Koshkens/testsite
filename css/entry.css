@@ -14,6 +14,9 @@ body {
    max-width: 1920px;
    color: rgba(255, 255, 255, 0.829);
 }
+.ptr{
+    margin-bottom: 20px;
+}
 button{
     -webkit-appearance: none;
     text-rendering: auto;
