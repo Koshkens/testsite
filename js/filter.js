@@ -20,6 +20,34 @@ function filter_entry(){
     });
     return filter_entry;
 }
+var sum_green = 0;
+var sum_yellow = 0;
+var sum_gray = 0;
+var sum_red = 0;
+
+
+function sum_status(){
+    Array.from(entrys).forEach(function(entry){
+        if(entry.classList.contains('green')){
+            sum_green++;
+        }
+        if(entry.classList.contains('yellow')){
+            sum_yellow++;
+        }
+        if(entry.classList.contains('gray')){
+            sum_gray++;
+        }
+        if(entry.classList.contains('red')){
+            sum_red++;
+        }
+        btn1.textContent = 'Работаем '+sum_green;
+        btn2.textContent = 'Переговоры '+sum_yellow;
+        btn3.textContent = 'Холодный клиент '+sum_red;
+        btn4.textContent = 'Не работаем '+sum_gray;
+    });
+
+}
+sum_status();
 
 function filter(){
     hide1Entrys();
