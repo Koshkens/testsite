@@ -14,9 +14,6 @@ body {
    max-width: 1920px;
    color: rgba(255, 255, 255, 0.829);
 }
-.ptr{
-    margin-bottom: 20px;
-}
 button{
     -webkit-appearance: none;
     text-rendering: auto;
@@ -182,6 +179,8 @@ input{
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
+    width: 30%;
+    min-width: 140px;
 }
 .documents{
     margin-top: 50px;
@@ -193,12 +192,12 @@ input{
     margin:10px;
 }
 input[type="text"], textarea[type="text"]{
-    background-color: rgba(166, 172, 179, 0.151);
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.9)
 
 }
-
-.left, .rigth, .center{
-    width: 25%;
+.footer{
+    margin-bottom: 10px;
 }
 .function{
     width:15%;
@@ -242,7 +241,7 @@ input[type="text"], textarea[type="text"]{
     display: none;
 }
 .segment_label{
-    color: rgba(255, 255, 255, 0.37);
+    color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
 .segment_checkbox:checked + .segment_label{

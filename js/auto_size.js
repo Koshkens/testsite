@@ -15,6 +15,7 @@ Array.from(checkboxes).forEach(function(checkbox){
 	});
 });
 
+
 // var _txt = document.getElementsByClassName('auto_size'); // здесь comment - это идентификатор поля, которое будет растягиваться.
 // var _minRows = 15; // минимальное количество строк (высота поля)
 

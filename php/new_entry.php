@@ -97,6 +97,10 @@
     echo '<div class="entry">
             <form method="post" action="./new_entry.php">
             <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
+                <div class="footer">
+                    <input class="save__btn" type="submit" id="save" value="Сохранить">
+                    <input type="button" onclick="location.href=\'../index.php\'" class="back__btn" value="Назад"/>
+                </div>
                 <div class="block left">
                     <div class="status">
                         <p>Статус:</p>
@@ -109,14 +113,14 @@
                         <label><input type="radio" name="status[]" value="4" class="status__button4">
                         <span  class="status__label">Не работаем</span></label> 
                     </div>
-                    <div class="talk">
-                        <p>Переговоры:</p>
-                        <textarea rows="20" class="auto_size talk__text" name="talk"  type="text" placeholder="Переговоры с клиентом"></textarea>
+                    <div class="description">
+                        <p>Описание:</p>
+                        <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"></textarea>
                     </div>
                 </div>
                 <div class="block center">
                     <div class="date"> 
-                        <p>Дата:</p>
+                        <span>Дата:</span>
                         <input class="date__input" readonly type="date" name="date" value="'.$date.'">
                         <input type=hidden name="time" value="">
                     </div> 
@@ -159,15 +163,7 @@
                         <p>Название:</p>
                         <input type="text"  class="title__text" name="title" value="" placeholder="Название">
                     </div>
-                    <div class="description">
-                        <p>Описание:</p>
-                        <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"></textarea>
-                    </div>
                 </div>
-                <div class="block function">
-                    <input class="save__btn" type="submit" id="save" value="Сохранить">
-                    <input type="button" onclick="history.back();" class="back__btn" value="Назад"/>
-                </div"
             </form>
         </div>
         <script src="../js/auto_size.js"></script>';

@@ -18,14 +18,9 @@
             <span id="datetime" class="datetime"></span>
         </div>
         <div class="nav_btn">
-            <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
+            <a class="new_element" href="./php/new_entry.php">Новая запись</a>
             <a class="stat" href="./php/stat.php" target="_blank">Статистика</a>
         </div>
-        <!-- <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input">
-        <a class="new_element" href="./php/new_entry.php" target="_blank">Новая запись</a>
-        <a class="stat" href="./php/stat.php" target="_blank">Статистика</a>
-        <span class="entry_amount" id="entry_amount"></span>
-        <span id="datetime" class="datetime"></span> -->
     </div>
     <div class="filter">
         <div class="filter__status">

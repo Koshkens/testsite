@@ -110,6 +110,10 @@
     <div class="entry">
         <form method='post' action="./entry.php">
         <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
+            <div class="footer">
+                <input class="save__btn" type="submit" id="save" value="Сохранить">
+                <input type="button" onclick="location.href='../index.php'" class="back__btn" value="Назад"/>
+            </div>
             <div class="block left">
                 <div class="status">
                     <p>Статус:</p>
@@ -122,14 +126,14 @@
                     <label><input type="radio" name="status[]" value="4" class="status__button4" <?php echo $status[3]?> >
                     <span  class="status__label">Не работаем</span></label>    
                 </div>
-                <div class="talk">
-                    <p>Переговоры:</p>
-                    <textarea rows="20" class="auto_size talk__text" name="talk"  type="text" placeholder="Переговоры с клиентом"></textarea>
+                <div class="description">
+                    <p>Описание:</p>
+                    <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"><?php echo $talk?></textarea>
                 </div>
             </div>
             <div class="block center">
                 <div class="date"> 
-                    <p>Дата:</p>
+                    <span>Дата:</span>
                     <input class="date__input" readonly type="date" name="date" value="<?php echo $date?>">
                     <input type=hidden name="time" value="<?php echo $time ?>">
                 </div> 
@@ -172,27 +176,13 @@
                     <p>Название:</p>
                     <input type="text"  class="title__text" name="title" value="<?php echo $title?>" placeholder="Название">
                 </div>
-                <div class="description">
-                    <p>Описание:</p>
-                    <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"><?php echo $talk?></textarea>
-                </div>
-            </div>
-            <div class="block function">
-                <input class="save__btn" type="submit" id="save" value="Сохранить">
-                <input type="button" onclick="history.back();" class="back__btn" value="Назад"/>
                 <div class="sms">
-                    <textarea rows="20" class="auto_size sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
+                    <textarea rows="10" class="auto_size sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
                     <button class="sms__btn" id="sms_btn">SMS</button>
-                </div>
-                <div class="documents">
-                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_1.php','Документ 1','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 1</button>
-                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_2.php','Документ 2','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 2</button>
-                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_3.php','Документ 3','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 3</button>
-                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_4.php','Документ 4','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 4</button>
-                    <button class="link_on_doc" onClick="window.open('../php_doc_page/document_5.php','Документ 5','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400');">Документ 5</button>
                 </div>
             </div>
         </form>
     </div>
+    <script src="../js/auto_size.js"></script>
 </body>
 </html>
