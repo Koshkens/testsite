@@ -174,12 +174,6 @@ button:focus {
     margin-left: 15px;
     padding-left: 10px;
 }
-.datetime{
-    /* position: fixed;
-    margin: 15px;
-    right: 0;
-    font-size: 20px; */
-}
 .content {
     margin: 25px auto;
     margin-top: 100px;
@@ -187,9 +181,8 @@ button:focus {
     max-width: 1920px;
 }
 .entry{
-    margin: 5px;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.3);
+    margin: 2px;
+    padding: 5px;
     border-radius: 25px;
     transition: .5s;
     color: #fff;
@@ -198,7 +191,7 @@ button:focus {
 }
 .sample{
     margin: 5px;
-    padding: 15px;
+    padding: 5px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     width:850px;
@@ -262,19 +255,33 @@ button:focus {
 .status{
     width: 140px;
 }
-.red{
-    background-color:rgba(255, 0, 0, 0.5);
-}
 
+.red{
+    border:solid rgba(255, 0, 0, 0.5);
+}
 .yellow{
-    background-color:rgba(255, 255, 0, 0.5);
+    border:solid rgba(255, 255, 0, 0.5);
 }
 
 .green{
-    background-color:rgba(0, 128, 0, 0.5);
+    border:solid rgba(0, 128, 0, 0.5);
 }
 .gray{
-    background-color:rgba(128, 128, 128, 0.5);
+    border:solid rgba(128, 128, 128, 0.5);
+}
+
+.red_filter{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.yellow_filter{
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.green_filter{
+    background-color: rgba(0, 128, 0, 0.5);
+}
+.gray_filter{
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 .ok{

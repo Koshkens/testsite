@@ -35,10 +35,10 @@
             $data_json = json_encode($data);
             $entry_id = $_POST['entry_id'];
             include ('./add_entry.php');
-            echo '
-                <span class="added">Запись добавлена!</span>
-                <input type="button" onclick="history.go(-2);" class="back__btn" value="Назад"/>    
-            ';
+            echo    'Добавление записи...'.
+                    '<script type="text/javascript">'.
+                        'window.location.replace("./entry.php?entry_id='.$res["id"].'&entry=");'.
+                    '</script>';
         }else{
     // $date = date('Y-m-d');
     // echo '<div class="entry">
@@ -98,8 +98,8 @@
             <form method="post" action="./new_entry.php">
             <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
                 <div class="footer">
-                    <input class="save__btn" type="submit" id="save" value="Сохранить">
-                    <input type="button" onclick="location.href=\'../index.php\'" class="back__btn" value="Назад"/>
+                    <input class="save__btn btn_off" type="submit" id="save__btn" onclick="return confirm(\'Вы действительно хотите добавить запись?\');" value="Добавить">
+                    <input type="button" id="back__btn" class="back__btn" value="На главную"/>
                 </div>
                 <div class="block left">
                     <div class="status">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="description">
                         <p>Описание:</p>
-                        <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"></textarea>
+                        <textarea rows="20" id=textArea class="auto_size description__text" name="description"  type="text" placeholder="Описание"></textarea>
                     </div>
                 </div>
                 <div class="block center">
@@ -166,7 +166,7 @@
                 </div>
             </form>
         </div>
-        <script src="../js/auto_size.js"></script>';
+        <script src="../js/script_new_entry.js"></script>';
     }
     ?>
 </body>

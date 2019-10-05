@@ -118,6 +118,15 @@ input{
     font-weight: bold;
     cursor: pointer;
 }
+.sms__btn{
+    width: 150px;
+}
+.btn_off{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.1);
+    cursor: auto;
+}
+
  .contact_text {
     width: 35%;
     height: 30px;
@@ -175,7 +184,7 @@ input{
 .block{
 	vertical-align:top;
     display: inline-block;
-    min-height:705px;
+    min-height:650px;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;

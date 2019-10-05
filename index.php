@@ -137,7 +137,7 @@
                         
                         $LPR_name = $entry[7];
                         if(count($entry[8])==0){
-                            $segment = '<span class="segment">Нет сегмента</<span>';
+                            $segment = '<span class="segment">Нет сегмента</span>';
                         }
                         foreach($entry[8] as $num_of_segment){
                             switch ($num_of_segment){

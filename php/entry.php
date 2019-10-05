@@ -33,7 +33,9 @@
             $data_json = json_encode($data);
             $entry_id = $_POST['entry_id'];
             include ('./update_entry.php');
-        }else{$entry_id = $_GET['entry_id'];}
+        }else{
+            $entry_id = $_GET['entry_id'];
+        }
         include ('./get_entry.php');
         $entry=$res["values"];
         $date = substr (date('Y-m-d H:i:s', strtotime($entry[2])),0,10);
@@ -41,7 +43,7 @@
                         
         $contact = '';
         foreach($entry[6] as $temp){
-            $contact = $contact.'<input class="contact_text" name="contact[]" type="text" value="'.$temp["contact"].'">';
+            $contact = $contact.'<input class="contact_text" name="contact[]" type="text" value="'.$temp["contact"].'" onkeydown="return event.key != \'Enter\';">';
         }
         $status = array_fill(0,4,'');
         switch ($entry[3][0]) {
@@ -111,8 +113,8 @@
         <form method='post' action="./entry.php">
         <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
             <div class="footer">
-                <input class="save__btn" type="submit" id="save" value="Сохранить">
-                <input type="button" onclick="location.href='../index.php'" class="back__btn" value="Назад"/>
+                <input class="save__btn btn_off" id="save__btn" type="submit"  onclick="return confirm('Вы действительно хотите сохранить запись?'); this.parentNode.submit();" value="Сохранить">
+                <input type="button" id="back__btn" class="back__btn" value="На главную"/>
             </div>
             <div class="block left">
                 <div class="status">
@@ -128,7 +130,7 @@
                 </div>
                 <div class="description">
                     <p>Описание:</p>
-                    <textarea rows="20" class="auto_size description__text" name="description"  type="text" placeholder="Описание"><?php echo $talk?></textarea>
+                    <textarea rows="20" class="auto_size description__text" name="description" id="textArea" type="text" placeholder="Описание"><?php echo $talk?></textarea>
                 </div>
             </div>
             <div class="block center">
@@ -139,11 +141,11 @@
                 </div> 
                 <div class="LPR">
                     <p>LPR Имя:</p>
-                    <input type="text"  class="LPR_name__text" name="LPR_name" value="<?php echo $LPR_name?>" placeholder="LPR Имя">
+                    <input type="text"  class="LPR_name__text" name="LPR_name" value="<?php echo $LPR_name?>" onkeydown="return event.key != 'Enter';" placeholder="LPR Имя">
                 </div>
                 <div class="contact">
                     <p>Контакты:</p>
-                    <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" placeholder="Новый контакт">
+                    <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" onkeydown="return event.key != 'Enter';" placeholder="Новый контакт">
                 </div>
                 <div class="segments">
                     <p>Сегмент:</p>
@@ -174,15 +176,15 @@
             <div class="block rigth"></label>
                 <div class="title">
                     <p>Название:</p>
-                    <input type="text"  class="title__text" name="title" value="<?php echo $title?>" placeholder="Название">
+                    <input type="text"  class="title__text" name="title" value="<?php echo $title?>" onkeydown="return event.key != 'Enter';" placeholder="Название">
                 </div>
                 <div class="sms">
-                    <textarea rows="10" class="auto_size sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
-                    <button class="sms__btn" id="sms_btn">SMS</button>
+                    <textarea rows="10" class="auto_size sms__text" id="sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
+                    <input type="button" class="sms__btn btn_off" id="sms__btn" value="Отправить SMS">
                 </div>
             </div>
         </form>
     </div>
-    <script src="../js/auto_size.js"></script>
+    <script src="../js/script_entry.js"></script>
 </body>
 </html>
