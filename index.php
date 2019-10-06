@@ -1,3 +1,20 @@
+<?php
+        if(isset($_POST["sms_btn"])){
+            include "./php/smsc_api.php";
+            $numbers = '';
+            $first = true;
+            foreach ($_POST["phones"] as $number) {
+                if($first){
+                    $numbers = $number;
+                    $first=false;
+                }else{
+                    $numbers = $numbers.','.$number;
+                }
+            }
+            send_sms($numbers,$_POST["sms_text"]);
+            header('location: ./index.php');
+        }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +26,12 @@
     <title>Панель</title>
 </head>
 <body>
+    
     <div class="nav">
         <div class="search_aum">
             <div class="entry_amount" id="entry_amount"></div> 
             <input type="text" id="elastic" placeholder="Введите поисковый запрос" class="nav_input"> 
+            <button class="select_all" id="select_all">Выбрать все</button>
         </div>
         <div class="datatime_title">
             <span id="datetime" class="datetime"></span>
@@ -22,6 +41,7 @@
             <a class="stat" href="./php/stat.php" target="_blank">Статистика</a>
         </div>
     </div>
+    <div class="page">
     <div class="filter">
         <div class="filter__status">
             <h3 class="filter__status_title">Статус</h3>
@@ -44,8 +64,16 @@
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Партнер ЭРА на Карте</p></label><br>             
             <label><input class="filter__segment_box" type="checkbox"><p class="filter__segment_title">Аренда рабочего места - 300 руб</p></label>
         </div>
+        <div class="sms_block">
+        <form action="" method="post" id="sms_form">
+            <div class="number" id="number"></div>
+            <textarea name="sms_text" class="sms_text" id="sms_text" cols="20" rows="10"></textarea><br>
+            <input type="submit" onclick="return confirm('Отправить SMS?'); this.parentNode.submit();" class="sms_btn btn_off" name="sms_btn" id="sms_btn" value="SMS" disabled>
+        </form>
     </div>
-    <span class="content">
+    </div>
+    
+    <div class="content">
         <ul  class="elastic">
                 <?php
                     include ('php/get_catalog.php');
@@ -101,9 +129,10 @@
                         }
                         $date = $day.$month;
                         $contact = '';
-                        foreach($entry[6] as $temp){
-                            $contact = $contact.$temp["contact"]."; "; 
-                        }
+                        $contact = $contact.$entry[6][0]["contact"];
+                        // foreach($entry[6] as $temp){
+                        //     $contact = $contact.$temp["contact"]."; "; 
+                        // }
                         if (!isset($entry[3][0])){
                             $entry[3]= array('5');
                         }
@@ -181,7 +210,8 @@
                         <form method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
                         <button class="button" name="entry" type="submit"><li class="entry '.$color.'">'.
-                                                '<span class="id entry_element">'.$entry_full["id"].'</span>'.
+                                                '<input type="checkbox" class="sms_checkbox"> 
+                                                <span class="id entry_element">'.$entry_full["id"].'</span>'.
                                                 '<span class="segment_span entry_element">'.$segment.'</span>'.
                                                 '<span class="title entry_element">'.$title.'</span>'.
                                                 '<span class="LPR_name entry_element">'.$LPR_name.'</span>'.
@@ -191,8 +221,10 @@
                                                 
                                                 
                     }
+
                 ?>
         </ul>
+    </div>
     </div>
     <script src="js/script.js"></script>
     <script src="js/live_search.js"></script>

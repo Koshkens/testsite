@@ -10,6 +10,10 @@
 </head>
 <body>
     <?php
+        if(isset($_POST["sms_btn"])){
+            include "smsc_api.php";
+            send_sms($_POST["sms_number"],$_POST["sms_text"]);
+        }
         if(isset($_POST["status"])||isset($_POST["segment"])||isset($_POST["date"])||isset($_POST["title"])||isset($_POST["description"])||isset($_POST["LPR_name"])||isset($_POST["contact"])){
             $values = array();
             $values['2'] = $_POST["date"].$_POST["time"];
@@ -42,8 +46,17 @@
         $time = substr (($entry[2]),10);
                         
         $contact = '';
+        $contact_number='';
+        if(isset($entry[6][0])){
+            $number = $entry[6][0]['contact'];
+            $contact_number = '<input class="contact_text" name="contact[]" type="tel" value="'.$entry[6][0]['contact'].'" pattern="[+][7][0-9]{10}" title="Номер должен содержать 11 цифр и начинаться с +7" maxlength="12" minlength="11" aria-invalid="false" aria-required="true" placeholder="Номер" onkeydown="return event.key != \'Enter\';">';
+        }
+        $not_first=false;
         foreach($entry[6] as $temp){
-            $contact = $contact.'<input class="contact_text" name="contact[]" type="text" value="'.$temp["contact"].'" onkeydown="return event.key != \'Enter\';">';
+            if($not_first==true){
+                $contact = $contact.'<input class="contact_text" name="contact[]" type="text" value="'.$temp["contact"].'" onkeydown="return event.key != \'Enter\';">';
+            }
+            $not_first = true;
         }
         $status = array_fill(0,4,'');
         switch ($entry[3][0]) {
@@ -145,7 +158,7 @@
                 </div>
                 <div class="contact">
                     <p>Контакты:</p>
-                    <?php echo $contact?><input class="contact_text" name="contact[]" type="text" value="" onkeydown="return event.key != 'Enter';" placeholder="Новый контакт">
+                    <?php echo $contact_number.$contact?><input class="contact_text" name="contact[]" type="text" value="" onkeydown="return event.key != 'Enter';" placeholder="Новый контакт">
                 </div>
                 <div class="segments">
                     <p>Сегмент:</p>
@@ -179,8 +192,18 @@
                     <input type="text"  class="title__text" name="title" value="<?php echo $title?>" onkeydown="return event.key != 'Enter';" placeholder="Название">
                 </div>
                 <div class="sms">
-                    <textarea rows="10" class="auto_size sms__text" id="sms__text" name="sms"  type="text" placeholder="Текст sms сообщения"></textarea>
-                    <input type="button" class="sms__btn btn_off" id="sms__btn" value="Отправить SMS">
+                    <form method="post" action="./entry.php">
+                        <input type="text" name="sms_number" class="hide" value="<?php echo $number ?>">
+                        <textarea rows="10" class="auto_size sms__text" id="sms__text" name="sms_text"  type="text" placeholder="Текст sms сообщения"></textarea>
+                        <input type="submit" name="sms_btn" class="sms__btn btn_off" id="sms__btn" value="Отправить SMS">
+                    </form>
+                </div>
+                <div class="documents">
+                    <form method="post" target="_blank" action="../php_doc_page/document_1.php">
+                        <input type="text" class="hide" name="number" value="<?php echo $number ?>">
+                        <input type="text" class="hide" name="name" value="<?php echo $LPR_name ?>">
+                        <input type="submit" name="doc1" class="doc" id="doc1" value="Шаблон №1">
+                    </form>
                 </div>
             </div>
         </form>

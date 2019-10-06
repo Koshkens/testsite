@@ -10,10 +10,7 @@ h1, h2, h3, h4, h5, h6, ul {
 li {
     list-style-type: none;
 }
-ul {
-    margin-left: 370px; 
-    padding-left: 0;
-}
+
 body {
    background-color: rgb(50,54,57);
    background-attachment: fixed;
@@ -46,12 +43,11 @@ body {
     width: 15px;
 }  
 .filter {
-    position: fixed;
-    left: 0;
-    float: left;
     width: 370px;
     height: 100%;
     background-color: rgba(50, 54, 57, 0.5);
+    float: left;
+    margin-top: 100px
 }
 .filter__segment_box {
     float: left;
@@ -125,6 +121,7 @@ button:focus {
     top: 0;
     left: 0;
     position: fixed;
+    min-width: 600px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -148,7 +145,8 @@ button:focus {
     transition: .5s;
 }
 .new_element, .stat {
-    margin: auto;
+    margin-top:35px;
+    margin-bottom: 10px;
     margin-right: 5px;
     text-decoration: none;
     color: rgb(0, 0, 0);;
@@ -162,6 +160,8 @@ button:focus {
 }
 .datatime_title{
     margin-left: 15px;
+    vertical-align: bottom;
+    margin-bottom: 10px; 
 }
 .nav_btn{
     float: right;
@@ -176,9 +176,8 @@ button:focus {
 }
 .content {
     margin: 25px auto;
+    padding-left: 0;
     margin-top: 100px;
-    min-width: 1400px;
-    max-width: 1920px;
 }
 .entry{
     margin: 2px;
@@ -186,12 +185,13 @@ button:focus {
     border-radius: 25px;
     transition: .5s;
     color: #fff;
-    width: 850px;
+    width: 880px;
     cursor: pointer;
 }
 .sample{
     margin: 5px;
     padding: 5px;
+    padding-left: 30px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     width:850px;
@@ -234,9 +234,7 @@ button:focus {
 .hide{
     display: none; 
 }
-.elastic{
-    margin-top: 100px;
-}
+
 .segment_sample{
     width:180px;
 }
@@ -283,11 +281,65 @@ button:focus {
 .gray_filter{
     background-color: rgba(128, 128, 128, 0.5);
 }
-
+.checkbox_sms{
+}
 .ok{
     background-image:url(../img/ok.ico); 
     width:16px; 
     height:16px; 
     display:inline-block;
     vertical-align:bottom;
+}
+.sms_block{
+    margin-top:15px;
+    margin-left: 15px;
+}
+.sms_text{
+    width: 95%;    
+    min-height: 120px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.9);
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    overflow-y: auto;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;   
+    max-height: 400px;
+    overflow: auto;
+}
+.sms_btn{
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    width: 100px;
+    height: 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn_off {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.1);
+    cursor: auto;
+}
+.sms_block, .content, .filter{
+    display: inline-block;
+}
+.select_all{
+    margin-right: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);;
+    background-color:#fff;
+    padding: 7px;
+    border-radius: 25px;
+    font-size: 16px;
 }

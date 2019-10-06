@@ -11,6 +11,7 @@ var btn1 = document.querySelector('#btn1');
 var btn2 = document.querySelector('#btn2');
 var btn3 = document.querySelector('#btn3');
 var btn4 = document.querySelector('#btn4');
+
 function filter_entry(){
     var filter_entry = Array();
     Array.from(entrys).forEach(function(entry){
@@ -96,6 +97,8 @@ function show1Entys(){
 function hide1Entrys(){
     Array.from(entrys).forEach(function(entry){
         entry.closest(".button").classList.add('hide1');
+        entry.querySelector('.sms_checkbox').checked = false;
+        add_number();
     });
 }
 
@@ -108,6 +111,8 @@ function show2Entys(){
 function hide2Entrys(){
     Array.from(entrys).forEach(function(entry){
         entry.closest(".button").classList.add('hide2');
+        entry.querySelector('.sms_checkbox').checked = false;
+        add_number();
     });
 }
 
@@ -187,4 +192,51 @@ btn4.addEventListener("click",function(){
         btn4_press = 1;
     }
     filter();
+});
+
+var sms_text = document.getElementById("sms_text");
+var sms_btn = document.getElementById("sms_btn"); 
+var sms_checkboxes = document.getElementsByClassName("sms_checkbox");
+var select_all = document.getElementById("select_all");
+var entry = document.getElementsByClassName("button");
+var number = document.getElementById("number"); 
+
+sms_text.addEventListener('keydown',function(){
+	sms_btn.classList.remove('btn_off');
+	sms_btn.removeAttribute('disabled');
+})
+
+function add_number(){
+    while (number.firstChild) {
+        number.removeChild(number.firstChild);
+    }
+    Array.from(sms_checkboxes).forEach(function(checkbox){
+        if(checkbox.checked){
+            let phone = checkbox.closest(".button").querySelector('.contact').textContent;
+            let number_text = document.createElement('input');
+            number_text.setAttribute("value",phone);
+            number_text.setAttribute("style",'display:none;');
+            number_text.setAttribute("name",'phones[]');
+            number.append(number_text);
+        }
+    });
+}
+
+Array.from(sms_checkboxes).forEach(function(checkbox){
+    checkbox.addEventListener("change",function(){
+        add_number();
+    });
+});
+
+select_all.addEventListener("click",function(){
+    Array.from(entry).forEach(function(entry){
+        if(!(entry.classList.contains('hide1')||entry.classList.contains('hide2')||entry.classList.contains('hide'))){
+            if(entry.querySelector('.sms_checkbox').checked){
+                entry.querySelector('.sms_checkbox').checked = false;
+            }else{
+                entry.querySelector('.sms_checkbox').checked = true;
+            }
+        }
+    });
+    add_number();
 });

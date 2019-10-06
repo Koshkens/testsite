@@ -75,10 +75,17 @@ input{
 ::-webkit-scrollbar{
     width: 7px;
 }
+.hide{
+    display: none;
+}
+
 .id{
     margin: 5px;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 .date__input {
     background-color: rgba(0, 0, 0, 0);
     outline: none;
@@ -200,7 +207,7 @@ input{
     font-weight: bold;
     margin:10px;
 }
-input[type="text"], textarea[type="text"]{
+input[type="text"], textarea[type="text"],input[type="tel"]{
     background-color: rgba(255, 255, 255, 1);
     color: rgba(0, 0, 0, 0.9)
 
@@ -256,5 +263,21 @@ input[type="text"], textarea[type="text"]{
 .segment_checkbox:checked + .segment_label{
     color: rgba(255, 255, 255, 0.829);
 }
-
-
+.number{
+    display: hide;
+}
+.doc{
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    width: 100px;
+    height: 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    cursor: pointer;
+}
