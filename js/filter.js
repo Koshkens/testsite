@@ -15,7 +15,7 @@ var btn4 = document.querySelector('#btn4');
 function filter_entry(){
     var filter_entry = Array();
     Array.from(entrys).forEach(function(entry){
-        if(!(entry.closest(".button").classList.contains('hide1'))){
+        if(!(entry.closest(".form").classList.contains('hide1'))){
             filter_entry.push(entry);
         }
     });
@@ -55,7 +55,7 @@ function filter(){
     if(btn1_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('green')){
-                entry.closest(".button").classList.remove('hide1');
+                entry.closest(".form").classList.remove('hide1');
             }
         });
     }
@@ -63,7 +63,7 @@ function filter(){
     if(btn2_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('yellow')){
-                entry.closest(".button").classList.remove('hide1');
+                entry.closest(".form").classList.remove('hide1');
             }
         });
     }
@@ -71,7 +71,7 @@ function filter(){
     if(btn3_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('red')){
-                entry.closest(".button").classList.remove('hide1');
+                entry.closest(".form").classList.remove('hide1');
             }
         });
     }
@@ -79,7 +79,7 @@ function filter(){
     if(btn4_press){
         Array.from(entrys).forEach(function(entry){
             if(entry.classList.contains('gray')){
-                entry.closest(".button").classList.remove('hide1');
+                entry.closest(".form").classList.remove('hide1');
             }
         });
     }
@@ -90,28 +90,28 @@ function filter(){
 
 function show1Entys(){
     Array.from(entrys).forEach(function(entry){
-        entry.closest(".button").classList.remove('hide1');
+        entry.closest(".form").classList.remove('hide1');
     });
 }
 
 function hide1Entrys(){
     Array.from(entrys).forEach(function(entry){
-        entry.closest(".button").classList.add('hide1');
-        entry.querySelector('.sms_checkbox').checked = false;
+        entry.closest(".form").classList.add('hide1');
+        entry.closest(".form").querySelector('.sms_checkbox').checked = false;
         add_number();
     });
 }
 
 function show2Entys(){
     Array.from(entrys).forEach(function(entry){
-        entry.closest(".button").classList.remove('hide2');
+        entry.closest(".form").classList.remove('hide2');
     });
 }
 
 function hide2Entrys(){
     Array.from(entrys).forEach(function(entry){
-        entry.closest(".button").classList.add('hide2');
-        entry.querySelector('.sms_checkbox').checked = false;
+        entry.closest(".form").classList.add('hide2');
+        entry.closest(".form").querySelector('.sms_checkbox').checked = false;
         add_number();
     });
 }
@@ -144,7 +144,7 @@ function filter_segment(){
                     });
                 });
                 if(l==(search_segments.length)){
-                    segment.closest(".button").classList.remove('hide2');
+                    segment.closest(".form").classList.remove('hide2');
                 }
         });
     }
@@ -198,7 +198,7 @@ var sms_text = document.getElementById("sms_text");
 var sms_btn = document.getElementById("sms_btn"); 
 var sms_checkboxes = document.getElementsByClassName("sms_checkbox");
 var select_all = document.getElementById("select_all");
-var entry = document.getElementsByClassName("button");
+var entry = document.getElementsByClassName("form");
 var number = document.getElementById("number"); 
 
 sms_text.addEventListener('keydown',function(){
@@ -210,9 +210,10 @@ function add_number(){
     while (number.firstChild) {
         number.removeChild(number.firstChild);
     }
+   
     Array.from(sms_checkboxes).forEach(function(checkbox){
         if(checkbox.checked){
-            let phone = checkbox.closest(".button").querySelector('.contact').textContent;
+            let phone = checkbox.closest('.form').querySelector('.button').querySelector('.contact').textContent;
             let number_text = document.createElement('input');
             number_text.setAttribute("value",phone);
             number_text.setAttribute("style",'display:none;');
@@ -227,16 +228,21 @@ Array.from(sms_checkboxes).forEach(function(checkbox){
         add_number();
     });
 });
-
+var select = false;
 select_all.addEventListener("click",function(){
     Array.from(entry).forEach(function(entry){
         if(!(entry.classList.contains('hide1')||entry.classList.contains('hide2')||entry.classList.contains('hide'))){
-            if(entry.querySelector('.sms_checkbox').checked){
+            if(select){
                 entry.querySelector('.sms_checkbox').checked = false;
             }else{
                 entry.querySelector('.sms_checkbox').checked = true;
             }
         }
     });
-    add_number();
+    if(select){
+        select=false
+    }else{
+        select=true;
+    }
+        add_number();
 });

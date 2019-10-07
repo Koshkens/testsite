@@ -195,6 +195,8 @@ button:focus {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     width:850px;
+    margin-left: 25px;
+    padding-right: 20px;
     
 }
 .sample span{

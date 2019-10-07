@@ -5,11 +5,11 @@ document.querySelector('#elastic').oninput = function () {
     if (val != '') {
         elasticItems.forEach(function (elem) {
             if (elem.innerText.toLowerCase().search(val) == -1) {
-                elem.classList.add('hide');
+                elem.closest('.form').classList.add('hide');
                 //elem.innerHTML = elem.innerText;
             }
             else {
-                elem.classList.remove('hide');
+                elem.closest('.form').classList.remove('hide');
                 //let str = elem.innerHTML;
                 //elem.innerHTML = insertMark(str, elem.innerHTML.search(val), val.length);
             }
@@ -17,7 +17,7 @@ document.querySelector('#elastic').oninput = function () {
     }
     else {
          elasticItems.forEach(function (elem) {
-            elem.classList.remove('hide');
+            elem.closest('.form').classList.remove('hide');
             //elem.innerHTML = elem.innerText;
          });
    }

@@ -129,7 +129,9 @@
                         }
                         $date = $day.$month;
                         $contact = '';
+                        if(isset($entry[6][0]["contact"])){
                         $contact = $contact.$entry[6][0]["contact"];
+                        }
                         // foreach($entry[6] as $temp){
                         //     $contact = $contact.$temp["contact"]."; "; 
                         // }
@@ -207,11 +209,11 @@
                         }
 
                         echo '
-                        <form method="get" action="php/entry.php">
+                        <form class="form" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
+                        <input type="checkbox" class="sms_checkbox"> 
                         <button class="button" name="entry" type="submit"><li class="entry '.$color.'">'.
-                                                '<input type="checkbox" class="sms_checkbox"> 
-                                                <span class="id entry_element">'.$entry_full["id"].'</span>'.
+                                                '<span class="id entry_element">'.$entry_full["id"].'</span>'.
                                                 '<span class="segment_span entry_element">'.$segment.'</span>'.
                                                 '<span class="title entry_element">'.$title.'</span>'.
                                                 '<span class="LPR_name entry_element">'.$LPR_name.'</span>'.
