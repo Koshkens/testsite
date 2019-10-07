@@ -195,7 +195,7 @@
                     <form method="post" action="./entry.php">
                         <input type="text" name="sms_number" class="hide" value="<?php echo $number ?>">
                         <textarea rows="10" class="auto_size sms__text" id="sms__text" name="sms_text"  type="text" placeholder="Текст sms сообщения"></textarea>
-                        <input type="submit" name="sms_btn" class="sms__btn btn_off" id="sms__btn" value="Отправить SMS">
+                        <input type="submit" onclick="return confirm('Отправить SMS?'); this.parentNode.submit();" name="sms_btn" class="sms__btn btn_off" id="sms__btn" value="Отправить SMS">
                     </form>
                 </div>
                 <div class="documents">
