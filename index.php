@@ -211,7 +211,7 @@
                         echo '
                         <form class="form" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">
-                        <input type="checkbox" class="sms_checkbox"> 
+                        <input type="checkbox" class="sms_checkbox">
                         <button class="button" name="entry" type="submit"><li class="entry '.$color.'">'.
                                                 '<span class="id entry_element">'.$entry_full["id"].'</span>'.
                                                 '<span class="segment_span entry_element">'.$segment.'</span>'.

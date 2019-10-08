@@ -43,7 +43,7 @@
     <h1>Приглашение</h1>
     <div>Уважаемый <input type="text" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" value="<?php echo $_POST["name"]?>">,</div><br><br>
 
-    <div>Уважаемые дамы и господа! Мы рады пригласить Вас на выставку <input type="text" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" value="" placeholder="название">, которая состоится в <input type="text" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" value="" placeholder="место"> с 15.08.2013 г. по 19.08.2013 г.</div><br><br>
+    <div>Уважаемые дамы и господа! Мы рады пригласить Вас на выставку <input type="text" style="width:80px;" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" value="" placeholder="название">, которая состоится в <input type="text" style="width:50px;" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';" value="" placeholder="место"> с 15.08.2013 г. по 19.08.2013 г.</div><br><br>
 
     <div>Наша компания представит на выставке как традиционное оборудование для оперативной полиграфии, так и оборудование для специальных видов печати. </div><br><br>
 
