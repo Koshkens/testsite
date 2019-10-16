@@ -107,10 +107,6 @@
                     </div> 
                 </div>
                 <div class="block rigth">
-                    <div class="title">
-                        <p>Название:</p>
-                        <input type="text"  class="title__text" name="title" value="" placeholder="Название">
-                    </div>
                 </div>
             </form>
         </div>

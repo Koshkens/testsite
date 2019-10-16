@@ -153,7 +153,7 @@ input::-webkit-inner-spin-button {
 }
 
 .LPR_name__text, .title__text{
-    width: 95%;
+    width: 75%;
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     padding: 8px;
@@ -248,7 +248,7 @@ input[type="text"], textarea[type="text"],input[type="tel"]{
     background-color:rgba(255, 255, 0, 0.5);
 }
 .status__button3:checked + .status__label{
-    background-color:rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 0, 0, 0.5);
 }
 .status__button4:checked + .status__label{
     background-color:rgba(128, 128, 128, 0.5);

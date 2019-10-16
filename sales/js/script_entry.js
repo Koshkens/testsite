@@ -19,12 +19,25 @@ var allInputs = document.getElementsByTagName('input');
 var textArea = document.getElementById('textArea');
 var save__btn = document.getElementById('save__btn');
 var back__btn = document.getElementById('back__btn');
+var close__btn = document.getElementById('close__btn');
 var sms__btn = document.getElementById('sms__btn');
 var sms__text = document.getElementById('sms__text');
 var change = 0;
 
 save__btn.setAttribute('disabled',true);
 sms__btn.setAttribute('disabled',true);
+
+close__btn.onclick = function(){
+	if (change){
+		let res = confirm('Выйти без сохранения?');
+		if (res){
+			window.close();
+		}
+	}else{
+		window.close();
+	}
+}
+
 back__btn.onclick = function(){
 	if (change){
 		let res = confirm('Выйти без сохранения?');

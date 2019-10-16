@@ -2,10 +2,6 @@
 <html>
   <head>
     <style>
-    @page {
-   size: 7in 9.25in;
-   margin: 27mm 16mm 27mm 16mm;
-}
     body {
         height: 842px;
         width: 595px;

@@ -1,5 +1,5 @@
 function entry_amount_function(){
-    var entrys = document.getElementsByClassName('button');
+    var entrys = document.getElementsByClassName('form');
     var entry_amount = document.getElementById('entry_amount');
     var checkboxes = document.getElementsByClassName('sms_checkbox');
     var amount =0;
@@ -16,12 +16,22 @@ function entry_amount_function(){
             checkeds++;
         }
     })
-    
+
     entry_amount.innerHTML = "Кол-во записей: "+ amount+"     "+"Кол-во отмеченных: "+ checkeds;
     setTimeout(entry_amount_function,100);
 }
 
+var buttons = document.getElementsByClassName("button");
+var entrys = document.getElementsByClassName("entry");
 
+Array.from(buttons).forEach(function(button){
+    button.addEventListener("click",function(){
+        Array.from(entrys).forEach(function(entry){
+            entry.classList.remove("select");
+        });
+        button.querySelector(".entry").classList.add("select");
+    });
+});
 
 if (window.addEventListener)
 	window.addEventListener("load", entry_amount_function, false);

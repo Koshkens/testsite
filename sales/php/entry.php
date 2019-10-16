@@ -120,19 +120,19 @@
                 
             }
         }
-       
     ?>
     <div class="entry">
         <form method='post' action="./entry.php">
         <input type=hidden name="entry_id" value="<?php echo $entry_id?>">
             <div class="footer">
                 <input class="save__btn btn_off" id="save__btn" type="submit"  onclick="return confirm('Вы действительно хотите сохранить запись?'); this.parentNode.submit();" value="Сохранить">
-                <input type="button" id="back__btn" class="back__btn" value="На главную"/>
+                <input type="button" id="back__btn" class="back__btn"  value="На главную"/>
+                <input type="button" id="close__btn" class="back__btn"  value="Закрыть"/>
             </div>
             <div class="block left">
                 <div class="status">
                     <p>Статус:</p>
-                    <label><input type="radio" name="status[]" value="1" class="status__button1" checked <?php echo $status[0]?>>
+                    <label><input type="radio" name="status[]" value="1" class="status__button1" <?php echo $status[0]?>>
                     <span  class="status__label">Работаем</span></label>
                     <label><input type="radio" name="status[]" value="2" class="status__button2" <?php echo $status[1]?> >
                     <span  class="status__label">Переговоры</span></label><br>
@@ -152,8 +152,13 @@
                     <input class="date__input" readonly type="date" name="date" value="<?php echo $date?>">
                     <input type=hidden name="time" value="<?php echo $time ?>">
                 </div> 
+                
+                <div class="title">
+                    Название:
+                    <input type="text"  class="title__text" name="title" value="<?php echo $title?>" onkeydown="return event.key != 'Enter';" placeholder="Название">
+                </div><br>
                 <div class="LPR">
-                    <p>LPR Имя:</p>
+                    LPR Имя: 
                     <input type="text"  class="LPR_name__text" name="LPR_name" value="<?php echo $LPR_name?>" onkeydown="return event.key != 'Enter';" placeholder="LPR Имя">
                 </div>
                 <div class="contact">
@@ -187,10 +192,7 @@
                 </div> 
             </div>
             <div class="block rigth"></label>
-                <div class="title">
-                    <p>Название:</p>
-                    <input type="text"  class="title__text" name="title" value="<?php echo $title?>" onkeydown="return event.key != 'Enter';" placeholder="Название">
-                </div>
+                
                 <div class="sms">
                     <form method="post" action="./entry.php">
                         <input type="text" name="sms_number" class="hide" value="<?php echo $number ?>">
