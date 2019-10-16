@@ -255,6 +255,10 @@ input[type="text"], textarea[type="text"],input[type="tel"]{
 }
 .segment_checkbox{
     display: none;
+}   
+.segment_first_click{
+    color: rgba(255, 255, 255, 0.829);
+    cursor: pointer;
 }
 .segment_label{
     color: rgba(255, 255, 255, 0.1);

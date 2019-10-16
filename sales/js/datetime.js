@@ -39,7 +39,7 @@ function Timer() {
             month = ' Декабря';
             break;
     }
-    document.getElementById('datetime').innerHTML=dt.getDate()+" "+month+"<br>"+dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+    document.getElementById('datetime').innerHTML=dt.getDate()+" "+month+" "+dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
     setTimeout("Timer()",1000);
  }
  Timer();

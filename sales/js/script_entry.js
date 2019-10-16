@@ -32,9 +32,13 @@ close__btn.onclick = function(){
 		let res = confirm('Выйти без сохранения?');
 		if (res){
 			window.close();
+			window.open(location, '_self', '');
+			window.close();
 		}
 	}else{
-		window.close();
+		window.close(); 
+		window.open(location, '_self', '');
+		window.close(); 
 	}
 }
 
