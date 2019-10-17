@@ -132,12 +132,12 @@
                     <div class="footer">
                         <input class="save__btn btn_off" id="save__btn" type="submit" onclick="return confirm('Вы действительно хотите сохранить запись?'); this.parentNode.submit();" value="Сохранить">
                         <input type="button" id="back__btn" class="back__btn" value="На главную" />
-                        <input type="button" id="close__btn" class="back__btn" value="Закрыть" />
+                        <!-- <input type="button" id="close__btn" class="back__btn" value="Закрыть" /> -->
                         <span id="datetime" class="datetime"></span>
                     </div>
                     <div class="block left">
                         <div class="id">
-                            ID Записи : <?php echo $entry_id ?>
+                            ID Записи : <span id="id"><?php echo $entry_id ?></span>
                         </div>
                         <div class="status">
                             <p>* Статус:</p>

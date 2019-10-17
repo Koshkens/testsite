@@ -21,17 +21,17 @@ function entry_amount_function(){
     setTimeout(entry_amount_function,100);
 }
 
-var buttons = document.getElementsByClassName("button");
-var entrys = document.getElementsByClassName("entry");
+// var buttons = document.getElementsByClassName("button");
+// var entrys = document.getElementsByClassName("entry");
 
-Array.from(buttons).forEach(function(button){
-    button.addEventListener("click",function(){
-        Array.from(entrys).forEach(function(entry){
-            entry.classList.remove("select");
-        });
-        button.querySelector(".entry").classList.add("select");
-    });
-});
+// Array.from(buttons).forEach(function(button){
+//     button.addEventListener("click",function(){
+//         Array.from(entrys).forEach(function(entry){
+//             entry.classList.remove("select");
+//         });
+//         button.querySelector(".entry").classList.add("select");
+//     });
+// });
 
 if (window.addEventListener)
 	window.addEventListener("load", entry_amount_function, false);
