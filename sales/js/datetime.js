@@ -39,7 +39,16 @@ function Timer() {
             month = ' Декабря';
             break;
     }
-    document.getElementById('datetime').innerHTML=dt.getDate()+" "+month+" "+dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+    var hours = dt.getHours();
+    if(hours<10)hours = "0"+hours;
+    var minutes = dt.getMinutes();
+    if(minutes<10)minutes="0"+minutes;
+    var hours = dt.getHours();
+    if(hours<10)hours = "0"+hours;
+    var seconds = dt.getSeconds();
+    if(seconds<10)seconds="0"+seconds;
+
+    document.getElementById('datetime').innerHTML=dt.getDate()+" "+month+" "+hours+":"+minutes+":"+seconds;
     setTimeout("Timer()",1000);
  }
  Timer();

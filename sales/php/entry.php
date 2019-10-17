@@ -52,15 +52,15 @@
     $time = substr(($entry[2]), 10);
 
     $contact = '';
-    $contact_number = '<input class="contact_text" name="contact[]" type="tel" value="" pattern="[+][7][0-9]{10}" title="Номер должен содержать 11 цифр и начинаться с +7" maxlength="12" minlength="11" aria-invalid="false" aria-required="true" placeholder="Номер" onkeydown="return event.key != \'Enter\';">';
+    $contact_number = '<input class="contact_text" name="contact[]" type="tel" value="" pattern="[+][7][(][0-9]{3}[)][-][0-9]{3}[-][0-9]{2}[-][0-9]{2}" title="Пример номера: +7(xxx)xxx-xx-xx" maxlength="17" minlength="11" aria-invalid="false" aria-required="true" placeholder="Номер" onkeydown="return event.key != \'Enter\';"><br>';
     if (isset($entry[6][0])) {
         $number = $entry[6][0]['contact'];
-        $contact_number = '<input class="contact_text" name="contact[]" type="tel" value="' . $entry[6][0]['contact'] . '" pattern="[+][7][0-9]{10}" title="Номер должен содержать 11 цифр и начинаться с +7" maxlength="12" minlength="11" aria-invalid="false" aria-required="true" placeholder="Номер" onkeydown="return event.key != \'Enter\';">';
+        $contact_number = '<input class="contact_text" name="contact[]" type="tel" value="' . $entry[6][0]['contact'] . '" pattern="[+][7][(][0-9]{3}[)][-][0-9]{3}[-][0-9]{2}[-][0-9]{2}" title="Пример номера: +7(xxx)xxx-xx-xx" maxlength="17" minlength="11" aria-invalid="false" aria-required="true" placeholder="Номер" onkeydown="return event.key != \'Enter\';"><br>';
     }
     $not_first = false;
     foreach ($entry[6] as $temp) {
         if ($not_first == true) {
-            $contact = $contact . '<input class="contact_text" name="contact[]" type="text" value="' . $temp["contact"] . '" onkeydown="return event.key != \'Enter\';">';
+            $contact = $contact . '<input class="contact_text" name="contact[]" type="text" value="' . $temp["contact"] . '" onkeydown="return event.key != \'Enter\';"><br>';
         }
         $not_first = true;
     }
@@ -133,7 +133,7 @@
                         <input class="save__btn btn_off" id="save__btn" type="submit" onclick="return confirm('Вы действительно хотите сохранить запись?'); this.parentNode.submit();" value="Сохранить">
                         <input type="button" id="back__btn" class="back__btn" value="На главную" />
                         <!-- <input type="button" id="close__btn" class="back__btn" value="Закрыть" /> -->
-                        <span id="datetime" class="datetime"></span>
+                        <div id="datetime" class="datetime"></div>
                     </div>
                     <div class="block left">
                         <div class="id">

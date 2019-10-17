@@ -161,7 +161,8 @@ button:focus {
 .datatime_title{
     margin-left: 15px;
     vertical-align: bottom;
-    margin-bottom: 15px; 
+    margin-bottom: 10px; 
+    font-size: 24pt;
 }
 .nav_btn{
     float: right;

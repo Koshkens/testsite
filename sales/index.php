@@ -208,8 +208,9 @@
                             }
                         }
                         $select = "";
-                        if($entry_full["id"]==$_GET["select"]) $select = "select";
-
+                        if(isset($_GET["select"])){
+                            if($entry_full["id"]==$_GET["select"]) $select = "select";
+                        }   
                         echo '
                         <form class="form" method="get" action="php/entry.php">
                         <input type=hidden name="entry_id" value="'.$entry_full["id"].'">

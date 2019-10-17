@@ -83,7 +83,7 @@
                     </div>
                     <div class="contact">
                         <p>Контакты:</p>
-                        <input class="contact_text" name="contact[]" type="tel" pattern="[+][7][0-9]{10}" title="Номер должен содержать 11 цифр и начинаться с +7" maxlength="12" minlength="11" placeholder="Номер" aria-invalid="false" aria-required="true">
+                        <input class="contact_text" name="contact[]" type="tel" pattern="[+][7][(][0-9]{3}[)][-][0-9]{3}[-][0-9]{2}[-][0-9]{2}" title="Пример номера: +7(xxx)xxx-xx-xx" maxlength="17" minlength="11" placeholder="Номер" aria-invalid="false" aria-required="true">
                         <input class="contact_text" name="contact[]" type="text" value="" placeholder="Другой контакт">
                     </div>
                     <div class="segments">

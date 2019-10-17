@@ -109,6 +109,12 @@ input::-webkit-inner-spin-button {
     align-items: center;
     text-align: center;
 }
+.datetime{
+    display: inline-block;
+    font-size: 20pt;
+    margin-bottom: 2px;
+    vertical-align: bottom;
+}
 .save__btn{
     margin-left: auto;
     margin-right: auto;
@@ -149,7 +155,7 @@ input::-webkit-inner-spin-button {
 }
 
  .contact_text {
-    width: 35%;
+    width: 90%;
     height: 30px;
     outline: none;
     background-color: rgba(0, 0, 0, 0);
@@ -205,12 +211,13 @@ input::-webkit-inner-spin-button {
 .block{
 	vertical-align:top;
     display: inline-block;
-    min-height:650px;
+    height:650px;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     width: 30%;
     min-width: 140px;
+    overflow-y: auto;
 }
 .documents{
     margin-top: 50px;

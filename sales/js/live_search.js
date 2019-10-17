@@ -2,9 +2,13 @@ document.querySelector('#elastic').oninput = function () {
     var val = this.value.trim();
     var elasticItems = document.getElementsByName("entry");
     val = val.toLowerCase();
+    var pluse = "";
+    if(val[0]=="+")pluse="\\+";
+    var valRegExp = new RegExp(pluse+val);
+    console.log(valRegExp);
     if (val != '') {
         elasticItems.forEach(function (elem) {
-            if (elem.innerText.toLowerCase().search(val) == -1) {
+            if (elem.innerText.toLowerCase().search(valRegExp) == -1) {
                 elem.closest('.form').classList.add('hide');
                 //elem.innerHTML = elem.innerText;
             }
