@@ -75,7 +75,6 @@
                             $services_elements = '';
                             foreach($entry[34] as $status_item){
                                 foreach($catalogs[0]["fields"][9]["config"]["items"] as $filter_status_item){  
-                                    var_dump($filter_status_item); 
                                     if($filter_status_item["id"] == $status_item){
                                         $services_elements = $services_elements.'<div class=services_elem>'.$filter_status_item["name"].'</div>';
                                         break;

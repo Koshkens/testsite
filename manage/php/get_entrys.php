@@ -7,7 +7,7 @@ $pass = '444111aF';
 $catalog_id = 11;
 
 // запрос
-$ch = curl_init("https://$domen/api/v1/catalogs/$catalog_id/records");
+$ch = curl_init("https://$domen/api/v1/catalogs/$catalog_id/records?limit=10000");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);

@@ -219,6 +219,7 @@
                                                 '<span class="title entry_element">'.$title.'</span>'.
                                                 '<span class="LPR_name entry_element">'.$LPR_name.'</span>'.
                                                 '<span class="contact entry_element">'.$contact.'</span>'.
+                                                '<span class="hidden">'.$description.'</span>'.
                                                 '</li></button></form>';
                         
                                                 

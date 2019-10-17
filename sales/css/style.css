@@ -236,6 +236,9 @@ button:focus {
 .hide{
     display: none; 
 }
+.hidden{
+    display: none;
+}
 
 .segment_sample{
     width:180px;
