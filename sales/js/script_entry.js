@@ -82,7 +82,7 @@ sms__text.addEventListener('keydown',function(){
 var inp = document.getElementsByClassName("contact_text")[0];
 
 inp.onclick = function() {
-    inp.value = "+";
+	if(inp.value=="")inp.value = "+7";
 }
 
 var old = 0;

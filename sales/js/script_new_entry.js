@@ -66,7 +66,7 @@ back__btn.onclick = function () {
 var inp = document.getElementsByClassName("contact_text")[0];
 
 inp.onclick = function() {
-    inp.value = "+7";
+    if(inp.value=="")inp.value = "+7";
 }
 
 var old = 0;
