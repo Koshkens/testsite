@@ -17,7 +17,7 @@ function entry_amount_function(){
         }
     })
 
-    entry_amount.innerHTML = "Кол-во записей: "+ amount+"     "+"Кол-во отмеченных: "+ checkeds;
+    entry_amount.innerHTML = "Записей: "+ amount+"     "+"Выбрано: "+ checkeds;
     setTimeout(entry_amount_function,100);
 }
 

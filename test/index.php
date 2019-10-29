@@ -1,27 +1,23 @@
 <?php
-    var_dump($_POST);
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'stat';
+
+$link = mysqli_connect($host, $user, $password, $database) 
+    or die("Ошибка " . mysqli_error($link));
+ 
+$query ="CREATE Table tovars
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(200) NOT NULL,
+    company VARCHAR(200) NOT NULL
+)";
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
+if($result)
+{
+    echo "Создание таблицы прошло успешно";
+}
+ 
+mysqli_close($link);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="post" class="form">
-        <div>
-            <div>
-                <div>   
-                        <input type="text" name="e">
-                        <input type="text" name="re">
-                        <input type="button" class="button">
-                </div>
-            </div>
-        </div>
-        
-    </form>
-    <script src="./script.js"></script>
-</body>
-</html>

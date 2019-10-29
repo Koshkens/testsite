@@ -1,7 +1,10 @@
 var checkboxes = document.getElementsByClassName('segment_checkbox');
-var checkeds = 1;
+var checkeds = 0;
 
 Array.from(checkboxes).forEach(function(checkbox){
+	if (checkbox.checked == true){
+		checkeds++;
+	}
 	checkbox.addEventListener("change",function(){
 		if(checkbox.checked){
 			checkeds++;
@@ -82,22 +85,18 @@ sms__text.addEventListener('keydown',function(){
 var inp = document.getElementsByClassName("contact_text")[0];
 
 inp.onclick = function() {
-	if(inp.value=="")inp.value = "+7";
+	if(inp.value=="")inp.value = "+7(";
 }
 
 var old = 0;
 
-inp.onkeydown = function() {
+
+inp.addEventListener("input",function() {
     var curLen = inp.value.length;
-    
     if (curLen < old){
       old--;
       return;
-      }
-    
-    if (curLen == 2) 
-    	inp.value = inp.value + "(";
-      
+	}
     if (curLen == 6)
     	inp.value = inp.value + ")-";
       
@@ -107,8 +106,8 @@ inp.onkeydown = function() {
      if (curLen == 14)
     	inp.value = inp.value + "-";  
       
-     if (curLen > 16)
+     if (curLen > 17)
     	inp.value = inp.value.substring(0, inp.value.length - 1);
       
      old++;
-}
+});

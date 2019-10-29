@@ -159,9 +159,9 @@ button:focus {
     display: inline-block;
 }
 .datatime_title{
-    margin-left: 15px;
+    margin-left: 25px;
     vertical-align: bottom;
-    margin-bottom: 10px; 
+    margin-bottom: 20px; 
     font-size: 24pt;
 }
 .nav_btn{
@@ -353,5 +353,5 @@ button:focus {
    height: 27px;
 }
 .select{
-    background-color:rgba(255, 255, 255, 0.329);
+    background-color:rgba(25,140,206, 0.329);
 }

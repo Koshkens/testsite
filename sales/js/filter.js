@@ -11,6 +11,11 @@ var btn1 = document.querySelector('#btn1');
 var btn2 = document.querySelector('#btn2');
 var btn3 = document.querySelector('#btn3');
 var btn4 = document.querySelector('#btn4');
+show1Entrys();
+show2Entrys()
+Array.from(segments_box).forEach(function(segment){
+    segment.checked = false;
+});
 
 function filter_entry(){
     var filter_entry = Array();
@@ -84,11 +89,11 @@ function filter(){
         });
     }
     if(!btn1_press && !btn2_press && !btn3_press && !btn4_press ) {
-        show1Entys();
+        show1Entrys();
     }
 }
 
-function show1Entys(){
+function show1Entrys(){
     Array.from(entrys).forEach(function(entry){
         entry.closest(".form").classList.remove('hide1');
     });
@@ -102,7 +107,7 @@ function hide1Entrys(){
     });
 }
 
-function show2Entys(){
+function show2Entrys(){
     Array.from(entrys).forEach(function(entry){
         entry.closest(".form").classList.remove('hide2');
     });
@@ -131,7 +136,7 @@ Array.from(segments_box).forEach(function(segment,i){
 function filter_segment(){
     console.log(search_segments);
     if(search_segments.length==0){
-       show2Entys();
+       show2Entrys();
     }else{
         hide2Entrys();
         Array.from(segments).forEach(function(segment){

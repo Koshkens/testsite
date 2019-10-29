@@ -176,28 +176,28 @@
                         </div>
                         <div class="segments">
                             <p>* Сегмент:</p>
-                            <input type="checkbox" class="segment_checkbox" id="segment1" name="segment[]" value="1" <?php echo $segment[0] ?>>
-                            <label for="segment1" class="segment_label">1 Партнер ЭРА на Карте</label><br>
+                            <input type="checkbox" class="segment_checkbox" id="segment10" name="segment[]" value="10" <?php echo $segment[9] ?>>
+                            <label for="segment10" class="segment_label">1 Потребитель</label><br style="line-height:25px">
                             <input type="checkbox" class="segment_checkbox" id="segment2" name="segment[]" value="2" <?php echo $segment[1] ?>>
                             <label for="segment2" class="segment_label">2 Визажист Стилист</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment3" name="segment[]" value="3" <?php echo $segment[2] ?>>
-                            <label for="segment3" class="segment_label">3 Магазин офлайн</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment4" name="segment[]" value="4" <?php echo $segment[3] ?>>
-                            <label for="segment4" class="segment_label">4 Группа ВК Продажа Косметики</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment5" name="segment[]" value="5" <?php echo $segment[4] ?>>
-                            <label for="segment5" class="segment_label">5 Insta Продажа Косметики</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment6" name="segment[]" value="6" <?php echo $segment[5] ?>>
-                            <label for="segment6" class="segment_label">6 Аренда рабочего места - 300 руб</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment7" name="segment[]" value="7" <?php echo $segment[6] ?>>
-                            <label for="segment7" class="segment_label">7 Сеть магазинов</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment8" name="segment[]" value="8" <?php echo $segment[7] ?>>
-                            <label for="segment8" class="segment_label">8 Интернет магазин</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment9" name="segment[]" value="9" <?php echo $segment[8] ?>>
-                            <label for="segment9" class="segment_label">9 Склад-Дистрибьютор</label><br>
-                            <input type="checkbox" class="segment_checkbox" id="segment10" name="segment[]" value="10" <?php echo $segment[9] ?>>
-                            <label for="segment10" class="segment_label">10 Потребитель</label><br>
                             <input type="checkbox" class="segment_checkbox" id="segment11" name="segment[]" value="11" <?php echo $segment[10] ?>>
-                            <label for="segment11" class="segment_label">11 Салон красоты</label><br>
+                            <label for="segment11" class="segment_label">3 Салон красоты / Школа</label><br style="line-height:25px">
+                            <input type="checkbox" class="segment_checkbox" id="segment3" name="segment[]" value="3" <?php echo $segment[2] ?>>
+                            <label for="segment3" class="segment_label">4 Магазин офлайн</label><br>
+                            <input type="checkbox" class="segment_checkbox" id="segment7" name="segment[]" value="7" <?php echo $segment[6] ?>>
+                            <label for="segment7" class="segment_label">5 Сеть магазинов</label><br>
+                            <input type="checkbox" class="segment_checkbox" id="segment9" name="segment[]" value="9" <?php echo $segment[8] ?>>
+                            <label for="segment9" class="segment_label">6 Склад-дистрибьютор</label><br style="line-height:25px">
+                            <input type="checkbox" class="segment_checkbox" id="segment8" name="segment[]" value="8" <?php echo $segment[7] ?>>
+                            <label for="segment8" class="segment_label">7 Интернет магазин</label><br>
+                            <input type="checkbox" class="segment_checkbox" id="segment4" name="segment[]" value="4" <?php echo $segment[3] ?>>
+                            <label for="segment4" class="segment_label">8 Группа ВК Продажа Косметики</label><br>
+                            <input type="checkbox" class="segment_checkbox" id="segment5" name="segment[]" value="5" <?php echo $segment[4] ?>>
+                            <label for="segment5" class="segment_label">9 Insta Продажа Косметики</label><br style="line-height:25px">
+                            <input type="checkbox" class="segment_checkbox" id="segment1" name="segment[]" value="1" <?php echo $segment[0] ?>>
+                            <label for="segment1" class="segment_label">10 Партнер ЭРА на Карте</label><br style="line-height:25px">
+                            <input type="checkbox" class="segment_checkbox" id="segment6" name="segment[]" value="6" <?php echo $segment[5] ?>>
+                            <label for="segment6" class="segment_label">11 Аренда рабочего места - 300 руб</label><br>
                         </div>
                     </div>
                     <div class="block rigth"></label>
