@@ -164,9 +164,10 @@
 
                         $description = $entry[5];
                         
+                        $LPR_name = $entry[7];
+                        
                         $segment = '';
                         
-                        $LPR_name = $entry[7];
                         if(count($entry[8])==0){
                             $segment = '<span class="segment">Нет сегмента</span>';
                         }

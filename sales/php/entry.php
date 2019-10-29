@@ -37,6 +37,17 @@
         $values['7'] = $_POST["LPR_name"];
         if (!isset($_POST["segment"])) $_POST["segment"] = array();
         $values['8'] = $_POST["segment"];
+        //sms события
+        $values['10'] = array();
+        if ($_POST["sms_event_checked"][0] == "") {
+            $empty_sms_event = "";
+        }
+        $_POST["sms_event_checked"] = array_filter($_POST["sms_event_checked"]);
+        if(isset($empty_sms_event)) array_unshift($_POST["sms_event_checked"], $empty_sms_event);
+        foreach ($_POST["sms_event_checked"] as $some) {
+            array_push($values['10'], array("recordId" => $some));
+        }
+        var_dump($values);
         // подготовка тела запроса
         $data = array();
         $data['values'] = $values;
@@ -47,7 +58,9 @@
         $entry_id = $_GET['entry_id'];
     }
     include('./get_entry.php');
+    include('./sms_events.php');
     $entry = $res["values"];
+    var_dump($entry);
     $date = substr(date('Y-m-d H:i:s', strtotime($entry[2])), 0, 10);
     $time = substr(($entry[2]), 10);
 
@@ -123,6 +136,11 @@
             case '11':
                 $segment[10] = "checked";
                 break;
+        }
+
+        $sms_event_checked = array();
+        foreach($entry[10] as $some){
+            array_push($sms_event_checked, $some["recordId"]);
         }
     }
     ?>
@@ -207,7 +225,20 @@
                                 <input type="text" name="sms_number" class="hide" value="<?php echo $number ?>">
                                 <textarea rows="10" class="auto_size sms__text" id="sms__text" name="sms_text" type="text" placeholder="Текст sms сообщения"></textarea>
                                 <input type="submit" onclick="return confirm('Отправить SMS?'); this.parentNode.submit();" name="sms_btn" class="sms__btn btn_off" id="sms__btn" value="Отправить SMS">
-                            </form>
+                            </form><br><br>
+                            <div class="sms_event_title"><?
+                            foreach($res_sms_events as $event){
+                                $sms_checked = "";
+                                foreach ($sms_event_checked as $some) {
+                                    if($some==$event["id"]){
+                                        $sms_checked = "checked";
+                                    }
+
+                                }
+                                echo '<input name="sms_event_checked[]" type="checkbox" value="'.$event["id"].'" '.$sms_checked.'>'.$event["values"][1]; 
+                            }
+                            ?>
+                            </div>
                         </div>
                         <div class="documents">
                             <form method="post" target="_blank" action="../php_doc_page/document_1.php">

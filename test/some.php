@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="some.php" method="get" name="form">
-        <input type="text" name="text">
-        <input type="password" name="password">
-        <input type="submit" name="submit">
-    </form>
+    <?
+        if(isset($_GET["submit"])){
+            echo $_GET["text"].'<br>';
+            echo $_GET["password"].'<br>';
+        }
+    ?>
 </body>
 </html>
