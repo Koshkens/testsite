@@ -18,5 +18,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Length: ' . strlen($data_json))
 );
 $result = curl_exec($ch);
+echo curl_error($ch);
 curl_close($ch);
 ?>

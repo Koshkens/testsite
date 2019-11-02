@@ -68,7 +68,17 @@
         <form action="" method="post" id="sms_form">
             <div class="number" id="number"></div>
             <textarea name="sms_text" class="sms_text" id="sms_text" cols="20" rows="10"></textarea><br>
-            <input type="submit" onclick="return confirm('Отправить SMS?'); this.parentNode.submit();" class="sms_btn btn_off" name="sms_btn" id="sms_btn" value="SMS" disabled>
+            <input type="submit" onclick="return confirm('Отправить SMS?'); this.parentNode.submit();" class="sms_btn btn_off" name="sms_btn" id="sms_btn" value="Отправить SMS" disabled>
+        </form><br>
+        <form action="./php/update_sms_events.php" target="_blank" method="post" id="sms_add_events">
+            <div class="entrys_for_events" id="entrys_for_events"></div>
+            <?                
+                include('./php/sms_events.php');
+                foreach ($res_sms_events as $event) {
+                    echo '<label class="sms_event_label"><input name="sms_event_checked[]" type="checkbox" value="' . $event["id"] . '">' . $event["values"][1].'</label><br><br>';
+                }
+            ?>
+            <input type="submit" onclick="return confirm('Добавить SMS события?'); this.parentNode.submit();" class="sms_btn btn_off" name="sms_btn_for_events" id="sms_btn_for_events" value="Добавить SMS события" disabled>
         </form>
     </div>
     </div>
@@ -238,5 +248,6 @@
     <script src="js/live_search.js"></script>
     <script src="js/datetime.js"></script>
     <script src="js/filter.js"></script>
+    <script src="js/sms.js"></script>
 </body>
 </html>
