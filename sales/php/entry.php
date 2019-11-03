@@ -223,6 +223,7 @@
                             </form><br><br>
                             <div class="sms_event_title">
                                 <?
+                                echo 'SMS Cобытия<br><br>';
                                 foreach ($res_sms_events as $event) {
                                     $sms_checked = "";
                                     foreach ($sms_event_checked as $some) {

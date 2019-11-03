@@ -33,6 +33,13 @@
             $values['7'] = $_POST["LPR_name"];
             if(!isset($_POST["segment"])) $_POST["segment"]=array();
             $values['8'] = $_POST["segment"];
+            //sms события
+            $values['10'] = array();
+            if (isset($_POST["sms_event_checked"])) {
+                foreach ($_POST["sms_event_checked"] as $some) {
+                    array_push($values['10'], array("recordId" => $some, "sectionId" => "2", "catalogId" => "27"));
+                }
+            }
             // подготовка тела запроса
             $data = array();
             $data['values'] = $values;
@@ -43,6 +50,7 @@
                         'window.location.replace("./entry.php?entry_id='.$res["id"].'&entry=");'.
                     '</script>';
         }else{
+    include('./sms_events.php');
     $date = date('Y-m-d');
     echo '<div class="entry">
             <form method="post" name="form" id="new_entry_form" action="">
@@ -113,6 +121,12 @@
                     </div> 
                 </div>
                 <div class="block rigth">
+                <div class="sms_event_title">';
+                    echo 'SMS Cобытия<br><br>';
+                    foreach ($res_sms_events as $event) {
+                        echo '<label class="sms_event_label"><input name="sms_event_checked[]" type="checkbox" value="' . $event["id"] . '" ' . $sms_checked . '>' . $event["values"][1].'</label><br>';
+                    }
+          echo '</div>
                 </div>
             </form>
         </div>
