@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../css/entry.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
@@ -8,51 +9,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Панель</title>
 </head>
+
 <body>
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $time="T09:05:51.019Z";
-            $values = array();
-            if($_POST["date"]=="") $_POST["date"]=date('Y-m-d');
-            $values['2'] = $_POST["date"].$_POST["time"];
-            $values['3'] = $_POST["status"];
-            if(!isset($_POST["title"])) $_POST["title"]='';
-            $values['4'] = $_POST["title"]; 
-            if(!isset($_POST["description"])) $_POST["description"]='';
-            $values['5'] = $_POST["description"];
-            if(!isset($_POST["LPR_name"])) $_POST["LPR_name"]='';
-            $values['6'] = array();
-            if ($_POST["contact"][0] == "") {
-                $empty = "";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $time = "T09:05:51.019Z";
+        $values = array();
+        if ($_POST["date"] == "") $_POST["date"] = date('Y-m-d');
+        $values['2'] = $_POST["date"] . $_POST["time"];
+        $values['3'] = $_POST["status"];
+        if (!isset($_POST["title"])) $_POST["title"] = '';
+        $values['4'] = $_POST["title"];
+        if (!isset($_POST["description"])) $_POST["description"] = '';
+        $values['5'] = $_POST["description"];
+        if (!isset($_POST["LPR_name"])) $_POST["LPR_name"] = '';
+        $values['6'] = array();
+        if ($_POST["contact"][0] == "") {
+            $empty = "";
+        }
+        $_POST["contact"] = array_filter($_POST["contact"]);
+        if (isset($empty)) array_unshift($_POST["contact"], $empty);
+        foreach ($_POST["contact"] as $contact) {
+            array_push($values['6'], array("contact" => $contact));
+        }
+        $values['7'] = $_POST["LPR_name"];
+        if (!isset($_POST["segment"])) $_POST["segment"] = array();
+        $values['8'] = $_POST["segment"];
+        //sms события
+        $values['10'] = array();
+        if (isset($_POST["sms_event_checked"])) {
+            foreach ($_POST["sms_event_checked"] as $some) {
+                array_push($values['10'], array("recordId" => $some, "sectionId" => "2", "catalogId" => "27"));
             }
-            $_POST["contact"] = array_filter($_POST["contact"]);
-            if(isset($empty)) array_unshift($_POST["contact"], $empty);
-            foreach($_POST["contact"] as $contact){
-                array_push($values['6'], array("contact" => $contact));
-            }
-            $values['7'] = $_POST["LPR_name"];
-            if(!isset($_POST["segment"])) $_POST["segment"]=array();
-            $values['8'] = $_POST["segment"];
-            //sms события
-            $values['10'] = array();
-            if (isset($_POST["sms_event_checked"])) {
-                foreach ($_POST["sms_event_checked"] as $some) {
-                    array_push($values['10'], array("recordId" => $some, "sectionId" => "2", "catalogId" => "27"));
-                }
-            }
-            // подготовка тела запроса
-            $data = array();
-            $data['values'] = $values;
-            $data_json = json_encode($data);
-            include ('./add_entry.php');
-            echo    'Добавление записи...'.
-                    '<script type="text/javascript">'.
-                        'window.location.replace("./entry.php?entry_id='.$res["id"].'&entry=");'.
-                    '</script>';
-        }else{
-    include('./sms_events.php');
-    $date = date('Y-m-d');
-    echo '<div class="entry">
+        }
+        // подготовка тела запроса
+        $data = array();
+        $data['values'] = $values;
+        $data_json = json_encode($data);
+        include('./add_entry.php');
+        echo    'Добавление записи...' .
+            '<script type="text/javascript">' .
+            'window.location.replace("./entry.php?entry_id=' . $res["id"] . '&entry=");' .
+            '</script>';
+    } else {
+        include('./sms_events.php');
+        $date = date('Y-m-d');
+        echo '<div class="entry">
             <form method="post" name="form" id="new_entry_form" action="">
                 <div class="footer">
                     <input class="save__btn btn_off" type="submit" id="save__btn" value="Добавить">
@@ -78,7 +80,7 @@
                 <div class="block center">
                     <div class="date"> 
                         <span>Дата:</span>
-                        <input class="date__input" readonly type="date" name="date" value="'.$date.'">
+                        <input class="date__input" readonly type="date" name="date" value="' . $date . '">
                         <input type=hidden name="time" value="">
                     </div>
                     <div class="title">
@@ -122,11 +124,11 @@
                 </div>
                 <div class="block rigth">
                 <div class="sms_event_title">';
-                    echo 'SMS Cобытия<br><br>';
-                    foreach ($res_sms_events as $event) {
-                        echo '<label class="sms_event_label"><input name="sms_event_checked[]" type="checkbox" value="' . $event["id"] . '" ' . $sms_checked . '>' . $event["values"][1].'</label><br>';
-                    }
-          echo '</div>
+        echo 'SMS Cобытия<br><br>';
+        foreach ($res_sms_events as $event) {
+            echo '<label class="sms_event_label"><input name="sms_event_checked[]" type="checkbox" value="' . $event["id"] . '">' . $event["values"][1] . '</label><br>';
+        }
+        echo '</div>
                 </div>
             </form>
         </div>
@@ -134,4 +136,5 @@
     }
     ?>
 </body>
+
 </html>
